@@ -3,6 +3,11 @@
   color: black;
   max-width: 100%;
   --side-margin:150px;
+  --main-side-margin:70px;
+}
+
+img {
+  max-width: 100%;
 }
 
 .body {
@@ -51,22 +56,22 @@
   width: 100px;
 }
 
-.navigation div ul {
+.nav > ul {
   display: flex;
 }
 
-.navigation div ul li {
+.nav ul li {
   list-style-type: none;
   margin-left: 15px;
 }
 
-.navigation div ul li a{
+.nav ul li a{
   text-decoration: none;
   font-weight: bold;
   padding: 5px;
 }
 
-.navigation div ul li a:hover {
+.nav ul li a:hover {
   color: #F4CE14;
   font-weight: bolder;
   font-size: 12pt;
@@ -74,6 +79,61 @@
   border-radius: 5px;
   transition: 0.1s;
 }
+
+.hamburgerIcon {
+  display: none;
+}
+
+.hamburgerIcon .icon{
+  font-size: 20pt;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.hamburgerIcon .icon:hover {
+  background-color: #495E57;
+}
+
+/* making navigation */
+@media screen and (max-width: 1000px) {
+  .hamburgerIcon {
+    display: block;
+  }
+
+  .nav ul{
+    position: fixed;
+    top:7vh;
+    right: var(--side-margin);
+    width:25%;
+    height: 40%;
+    background-color: #EDEFEE;
+    border-radius: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 0px;
+    padding-left: 0px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  * {
+    --side-margin:80px;
+    --main-side-margin:40px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  * {
+    --side-margin:40px;
+    --main-side-margin:20px;
+  }
+}
+
+/* creating style to control weather hamburger menu shows or not*/
+.not-active {
+  display: none;
+}
+
 
 /* styling the header */
 
@@ -146,8 +206,10 @@
 
 /* styling the footer */
 
-.footer > div{
+
+.inFooter-container {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .footer div {
@@ -182,8 +244,8 @@
 /* styling the main section */
 
 .main {
-  margin-left: 70px;
-  margin-right: 75px;
+  margin-left: var(--main-side-margin);
+  margin-right: var(--main-side-margin);
 }
 
 .main-tittle {
@@ -214,14 +276,14 @@
 }
 
 .card {
-  width: 270px;
+  width: 370px;
   background-color: #EDEFEE;
   border-radius: 15px 15px 0px 0px ;
   margin-bottom: 20px;
 }
 
 .card img {
-  width: 270px;
+  width: 370px;
   border-radius: 15px 15px 0px 0px;
 }
 

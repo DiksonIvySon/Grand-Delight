@@ -11,7 +11,7 @@ class Footer extends Component {
     render() {
         return(
             <footer className="footer">
-                <div>
+                <div className="inFooter-container">
                     <div>
                         <img src={restaurant}></img>
                     </div>

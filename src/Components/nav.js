@@ -1,10 +1,30 @@
 import React, {Component} from "react";
-
 import Logo from './assets/Logo.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 class Nav extends Component {
     constructor() {
         super();
+    
+    this.state = {
+        active: "nav",
+    }
+
+    this.handleMenuIconClick = this.handleMenuIconClick.bind(this);
+}
+
+    handleMenuIconClick() {
+        if(this.state.active === "nav") {
+            this.setState({
+                active: "not-active",
+            });
+        }else {
+            this.setState({
+                active: "nav",
+            });
+        }
+        
     }
 
     render() {
@@ -13,7 +33,7 @@ class Nav extends Component {
                 <div>
                     <img src={Logo} alt="logo"></img>
                 </div>
-                <div className="nav">
+                <div className={this.state.active}>
                     <ul>
                         <li><a href="">Home</a></li>
                         <li><a href="">About</a></li>
@@ -23,6 +43,10 @@ class Nav extends Component {
                         <li><a href="">Login</a></li>
                     </ul>
                 </div>
+                <div className="hamburgerIcon" onClick={this.handleMenuIconClick}>
+                    <FontAwesomeIcon icon={faBars} className="icon"/>
+                </div>
+
             </div>
         );
     };
