@@ -1,0 +1,263 @@
+* {
+  font-size: 12pt;
+  color: black;
+  max-width: 100%;
+  --side-margin:150px;
+}
+
+.body {
+  margin: 10px;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr 1fr 1fr;
+  grid-template-areas:
+                      "nav"
+                      "header"
+                      "main"
+                      "footer";
+}
+
+.nav {
+  grid-area: nav;
+  background-color: white;
+}
+
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+  background-color: white;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #495E57;
+}
+
+/* Styling the navigation */
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: var(--side-margin);
+  margin-right: var(--side-margin);
+}
+
+.navigation img {
+  width: 100px;
+}
+
+.navigation div ul {
+  display: flex;
+}
+
+.navigation div ul li {
+  list-style-type: none;
+  margin-left: 15px;
+}
+
+.navigation div ul li a{
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.navigation div ul li a:hover {
+  color: #F4CE14;
+  font-weight: bolder;
+  font-size: 12pt;
+  background-color: #495E57;
+  border-radius: 5px;
+  transition: 0.1s;
+}
+
+/* styling the header */
+
+.header {
+  background: linear-gradient(180deg,
+                             #495E57 0%,
+                             #495E57 80%,
+                             white 80%,
+                             white 100%);
+}
+
+.header > div{
+  margin-left: var(--side-margin);
+  margin-right: var(--side-margin);
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.header button {
+  background-color: #F4CE14;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 10pt;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 0px;
+}
+
+.header button:hover {
+  background-color: white;
+  color: #F4CE14;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.restaurantFoot-img img {
+  width: 250px;
+  height: 300px;
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+.header-tittle {
+  font-size: 20pt;
+  margin: 0px;
+  margin-top: 15px;
+  padding: 0px;
+  border: 0px;
+  color: #F4CE14;
+}
+
+.restaurant-location {
+  font-size: 18pt;
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  color: white;
+}
+
+.header p {
+  color: white;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}
+
+/* styling the footer */
+
+.footer > div{
+  display: flex;
+}
+
+.footer div {
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.footer img {
+  width: 200px;
+  height: 250px;
+  border-radius: 15px;
+}
+
+.footer div ul {
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.footer div ul li {
+  list-style-type: none;
+}
+
+.footer div ul li a{
+  text-decoration: none;
+}
+
+.footer div ul li a:hover {
+  color: #F4CE14;
+
+}
+
+/* styling the main section */
+
+.main {
+  margin-left: 70px;
+  margin-right: 75px;
+}
+
+.main-tittle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-tittle h1 {
+  font-size: 20pt;
+}
+
+.main-tittle button {
+  background-color: #F4CE14;
+  border-radius: 5px;
+  border: 0px;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.main-tittle button:hover {
+  background-color: #495E57;
+  color: #F4CE14;
+  cursor: pointer;
+}
+
+.card {
+  width: 270px;
+  background-color: #EDEFEE;
+  border-radius: 15px 15px 0px 0px ;
+  margin-bottom: 20px;
+}
+
+.card img {
+  width: 270px;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.card-tittle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+.card .card-price {
+  color: #EE9972;
+}
+
+.card .card-description {
+  margin: 10px;
+  font-size: 10pt;
+}
+
+.card .card-delivery {
+  margin: 10px;
+  padding-bottom: 10px;
+}
+
+.card .card-delivery:hover {
+  color: #F4CE14;
+  cursor: pointer;
+}
+
+.food-card {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.main .food-card {
+  align-items: center;
+}
