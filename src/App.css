@@ -1,7 +1,7 @@
 * {
   font-size: 12pt;
   color: black;
-  max-width: 100%;
+  max-width: 100;
   --side-margin:150px;
   --main-side-margin:70px;
 }
