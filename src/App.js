@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import Nav from './Components/nav';
-import Header from './Components/header';
-import Footer from './Components/footer';
-import Main from './Components/main';
+import Home from './Components/home';
 import './App.css';
+import BookingPage from './Components/bookingpage';
 
 
 class App extends Component {
@@ -13,20 +11,9 @@ class App extends Component {
 
   render() {
     return(
-      <body className='body'>
-      <nav className='nav'>
-        <Nav />
-      </nav>
-      <header className='header'>
-        <Header />
-      </header>
-      <main className='main'>
-        <Main />
-      </main>
-      <footer className='footer'>
-        <Footer />
-      </footer>
-      </body>
+      <>
+        <BookingPage />
+      </>
     );
   }
 }
