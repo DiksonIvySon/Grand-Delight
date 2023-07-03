@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Logo from './assets/Logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { NavLink } from "react-router-dom";
 
 class Nav extends Component {
     constructor() {
@@ -35,12 +36,12 @@ class Nav extends Component {
                 </div>
                 <div className={this.state.active}>
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Menu</a></li>
-                        <li><a href="">Reservation</a></li>
-                        <li><a href="">Order Online</a></li>
-                        <li><a href="">Login</a></li>
+                        <li><NavLink to="/">Home</NavLink></li>
+                        <li><NavLink to="about">About</NavLink></li>
+                        <li><NavLink to="menu">Menu</NavLink></li>
+                        <li><NavLink to="bookingPage">Reservation</NavLink></li>
+                        <li><NavLink to="orderOnline">Order Online</NavLink></li>
+                        <li><NavLink to="login">Login</NavLink></li>
                     </ul>
                 </div>
                 <div className="hamburgerIcon" onClick={this.handleMenuIconClick}>

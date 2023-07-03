@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import Nav from './nav';
-import Header from './homeHeader';
-import Footer from './footer';
-import Main from './main';
+import Nav from '../Components/nav';
+import Header from '../Components/homeHeader';
+import Footer from '../Components/footer';
 
 
-class Home extends Component {
+class Menu extends Component {
   constructor() {
     super();
   }
@@ -19,8 +18,8 @@ class Home extends Component {
         <header className='header'>
             <Header />
         </header>
-        <main className='main'>
-            <Main />
+        <main>
+
         </main>
         <footer className='footer'>
             <Footer />
@@ -30,4 +29,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Menu;

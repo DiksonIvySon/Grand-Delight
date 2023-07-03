@@ -1,7 +1,15 @@
 import React, {Component} from 'react';
-import Home from './Components/home';
 import './App.css';
-import BookingPage from './Components/bookingpage';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+//pages
+import BookingPage from './Pages/bookingPage';
+import Home from './Pages/home';
+import About from './Pages/about';
+import Login from './Pages/login';
+import Menu from './Pages/menu';
+import OrderOnline from './Pages/orderOnline';
+import ReservationConfirmation from './Pages/reservationComfirmation';
+
 
 
 class App extends Component {
@@ -11,9 +19,16 @@ class App extends Component {
 
   render() {
     return(
-      <>
-        <BookingPage />
-      </>
+      <BrowserRouter>
+        <Routes>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="menu" element={<Menu />} />
+            <Route path="bookingPage" element={<BookingPage />} />
+            <Route path="orderOnline" element={<OrderOnline />} />
+            <Route path="login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
     );
   }
 }

@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import Nav from "./nav";
-import BookingHeader from "./bookingHeader";
-import Footer from "./footer";
-import SignupPopup from "./signupPopup";
+import Nav from "../Components/nav";
+import BookingHeader from "../Components/bookingHeader";
+import Footer from "../Components/footer";
+import SignupPopup from "../Components/signupPopup";
 import { useState } from "react";
 
 

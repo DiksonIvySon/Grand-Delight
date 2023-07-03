@@ -80,6 +80,11 @@ img {
   transition: 0.1s;
 }
 
+/*making active links to stay highlighted*/
+.navigation a.active {
+  color: #F4CE14;
+}
+
 .hamburgerIcon {
   display: none;
 }
