@@ -509,6 +509,9 @@ img {
 .reservation {
   display: flex;
   justify-content: center;
+  background-color: #495E57;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .reservation form input {
@@ -550,8 +553,66 @@ img {
   color: #F4CE14;
 }
 
-.reservation {
+
+/* styling the signUp */
+.signUp {
+  display: flex;
+  justify-content: center;
   background-color: #495E57;
   border-radius: 10px;
   padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  position: relative;
+}
+
+.signUP {
+  width: 50vb;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #EDEFEE;
+  padding: 5px;
+}
+
+
+.signUp input {
+  width: 50vb;
+  height: 40px;
+  border-radius: 10px;
+  margin-right: 0px;
+}
+
+.signUp-button button {
+  background-color: #F4CE14;
+  width: 25vb;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.signUp-button button:hover {
+  background-color: #495E57;
+  color: #F4CE14;
+}
+
+.close-signUp-button {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+
+.close-signUp-button button {
+  background-color: #F4CE14;
+  border-radius: 10px;
+}
+
+.close-signUp-button button:hover {
+  background-color: red;
+}
+
+.signUP-btn button {
+  width: 25vb;
+  background-color: #F4CE14;
 }
