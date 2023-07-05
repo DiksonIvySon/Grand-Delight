@@ -9,7 +9,7 @@ import { useState } from "react";
 function Reservation() {
     const [inputs, setInputs] = useState({});
     const [textarea, setTextarea] = useState(
-        "The content of a textarea goes in the value attribute"
+        ""
       );
 
     const handleChange = (event) => {
@@ -32,44 +32,66 @@ function Reservation() {
                 <form onSubmit={handleSubmit}>
                     <div className="inputs">
                         <div>
-                            <label>Date*
+                            <label for="res-date">Choose date*
                                 <br/>
                             <input 
-                                type="text" 
-                                name="username" 
-                                value={inputs.username || ""} 
+                                type="date" 
+                                id="res-date"
+                                name="res-date" 
                                 onChange={handleChange}
                             />
                             </label>
                         </div>
                         <div>
-                            <label>Time*
+                            <label for="res-time">Choose time*
                                 <br/>
-                                <input 
-                                type="text" 
-                                name="username" 
-                                value={inputs.username || ""} 
-                                onChange={handleChange}
-                            />
-                            </label>
+                                <select id="res-time">
+                                    <option>16:00</option>
+                                    <option>17:00</option>
+                                    <option>18:00</option>
+                                    <option>19:00</option>
+                                    <option>20:00</option>
+                                    <option>21:00</option>
+                                    <option>22:00</option>
+                                </select>
+                            </label> 
                         </div>
                         <div>
-                            <label>Number of People*
+                            <label for="numberOfGuests">Number of guests*
                                 <br/>
                                 <input 
                                 type="number" 
-                                name="age" 
-                                value={inputs.age || ""} 
+                                id="numberOfGuests"
+                                name="numberOfGuests" 
+                                placeholder="1"
+                                min="1"
+                                max="15"
                                 onChange={handleChange}
                                 />
                             </label>
                         </div>
                         <div>
-                            <label>Any additional requirements
-                                <br/>
-                                <textarea value={textarea} onChange={handleChange} />
-                            </label>
+                            <label for="occasion">Occasion</label>
+                            <br/>
+                            <select id="occasion">
+                                <option>Birthday</option>
+                                <option>Anniversary</option>
+                                <option>Family gathering</option>
+                                <option>Reunion</option>
+                                <option>celebration</option>
+                                <option>other</option>
+                            </select>
                         </div>
+                        <div>
+                            <label for="additionalRequirements">Any additional requirements
+                                <br/>
+                                <textarea 
+                                    id="additionalRequirements"
+                                    placeholder="Please let us know of any additional requirements or requests here."
+                                    value={textarea} 
+                                    onChange={handleChange} />
+                            </label>
+                        </div> 
                         
                     </div>
                     <div className="confirmButton">
@@ -131,7 +153,7 @@ function SignUp() {
                 <button onClick={() => setButtonPopup(true)}>Sign up</button>
             </div>
             <br></br>
-            <SignupPopup trigger={buttonPopup} serTrigger={setButtonPopup}/>
+            <SignupPopup trigger={buttonPopup} setTrigger={setButtonPopup}/>
         </section>
     );
 }

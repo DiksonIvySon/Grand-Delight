@@ -535,6 +535,22 @@ img {
   padding: 5px;
 }
 
+#res-time {
+  width: 52vb;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #EDEFEE;
+  padding: 5px;
+}
+
+#occasion {
+  width: 52vb;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #EDEFEE;
+  padding: 5px;
+}
+
 .inputs div {
   margin: 10px;
 }
