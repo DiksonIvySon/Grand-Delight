@@ -12,7 +12,7 @@ class Home extends Component {
 
   render() {
     return(
-      <body className='body'>
+      <section className='body'>
         <nav className='nav'>
             <Nav />
         </nav>
@@ -25,7 +25,7 @@ class Home extends Component {
         <footer className='footer'>
             <Footer />
         </footer>
-      </body>
+      </section>
     );
   }
 }

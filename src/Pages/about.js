@@ -11,7 +11,7 @@ class About extends Component {
 
   render() {
     return(
-      <body className='body'>
+      <section className='body'>
         <nav className='nav'>
             <Nav />
         </nav>
@@ -24,7 +24,7 @@ class About extends Component {
         <footer className='footer'>
             <Footer />
         </footer>
-      </body>
+      </section>
     );
   }
 }

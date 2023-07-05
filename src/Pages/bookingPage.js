@@ -7,20 +7,25 @@ import { useState } from "react";
 
 
 function Reservation() {
-    const [inputs, setInputs] = useState({});
-    const [textarea, setTextarea] = useState(
-        ""
-      );
+    const [inputs, setInputs] = useState({
+        resDate:"",
+        resTime:"",
+        numberOfGuests:"",
+        occasion:"",
+        additionalRequirements:"",
+    });
 
-    const handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        setInputs(values => ({...values, [name]: value}))
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setInputs((prev) => {
+            return {...prev, [name]: value}
+        })
     }
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert(inputs);
+        console.log(inputs);
     }
 
     return(
@@ -32,20 +37,20 @@ function Reservation() {
                 <form onSubmit={handleSubmit}>
                     <div className="inputs">
                         <div>
-                            <label for="res-date">Choose date*
+                            <label htmlFor="resDate">Choose date*
                                 <br/>
-                            <input 
+                                <input 
                                 type="date" 
-                                id="res-date"
-                                name="res-date" 
+                                id="resDate"
+                                name="resDate" 
                                 onChange={handleChange}
                             />
                             </label>
                         </div>
                         <div>
-                            <label for="res-time">Choose time*
+                            <label htmlFor="resTime">Choose time*
                                 <br/>
-                                <select id="res-time">
+                                <select id="resTime" name="resTime" onChange={handleChange}>
                                     <option>16:00</option>
                                     <option>17:00</option>
                                     <option>18:00</option>
@@ -57,7 +62,7 @@ function Reservation() {
                             </label> 
                         </div>
                         <div>
-                            <label for="numberOfGuests">Number of guests*
+                            <label htmlFor="numberOfGuests">Number of guests*
                                 <br/>
                                 <input 
                                 type="number" 
@@ -71,9 +76,9 @@ function Reservation() {
                             </label>
                         </div>
                         <div>
-                            <label for="occasion">Occasion</label>
+                            <label htmlFor="occasion">Occasion</label>
                             <br/>
-                            <select id="occasion">
+                            <select id="occasion" name="occasion" onChange={handleChange}> 
                                 <option>Birthday</option>
                                 <option>Anniversary</option>
                                 <option>Family gathering</option>
@@ -83,19 +88,19 @@ function Reservation() {
                             </select>
                         </div>
                         <div>
-                            <label for="additionalRequirements">Any additional requirements
+                            <label htmlFor="additionalRequirements">Any additional requirements
                                 <br/>
                                 <textarea 
                                     id="additionalRequirements"
+                                    name="additionalRequirements"
                                     placeholder="Please let us know of any additional requirements or requests here."
-                                    value={textarea} 
                                     onChange={handleChange} />
                             </label>
                         </div> 
                         
                     </div>
                     <div className="confirmButton">
-                        <button type="submit">Confirm Reservation</button>
+                        <button type="submit" onClick={handleSubmit}>Confirm Reservation</button>
                     </div>
                 </form>
             </div>
@@ -103,45 +108,66 @@ function Reservation() {
     );
 }
 
-class Login  extends Component {
+function Login() {
     
-    render() {
-        return(
-            <section className="login">
-                <div className="login-title">
-                    <h1>Already have an account? <em>Login</em></h1>
-                </div>
-                <form>
-                    <div className="inputs">
-                        <label>Enter your name:
-                            <br/>
+    const [inputs, setInputs] = useState({
+        userName:"",
+        password:"",
+    })
+
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setInputs((prev) => {
+            return {...prev, [name]: value}
+        })
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(inputs);
+    }
+
+    return(
+        <section className="login">
+            <div className="login-title">
+                <h1>Already have an account? <em>Login</em></h1>
+            </div>
+            <form>
+                <div className="inputs">
+                    <label>Enter your name:
+                        <br/>
                         <input 
                             type="text" 
-                            name="username" 
+                            id="userName"
+                            name="userName" 
+                            placeholder="Dikson Manganye"
+                            onChange={handleChange}
+                    />
+                    </label>
+                    
+                    <label>Enter your password:
+                        <br/>
+                        <input 
+                            type="text"
+                            id="password" 
+                            name="password" 
+                            placeholder="ivySon@123"
+                            onChange={handleChange}
                         />
-                        </label>
-                        
-                        <label>Enter your password:
-                            <br/>
-                            <input 
-                            type="number" 
-                            name="age" 
-                            />
-                        </label>
-                    </div>
-                    <div className="loginButton">
-                        <button type="submit" >Log in</button>
-                    </div>
-                    <div className="signUp-button">
-                        <h4>Forgot your password</h4>
-                        <h1>Don't have an account</h1>
-                    </div>
-                </form>
-            </section>
-        );
-    }
-   
+                    </label>
+                </div>
+                <div className="loginButton">
+                    <button type="submit" onClick={handleSubmit}>Log in</button>
+                </div>
+                <div className="signUp-button">
+                    <h4>Forgot your password</h4>
+                    <h1>Don't have an account</h1>
+                </div>
+            </form>
+        </section>
+    );
 }
+
 
 function SignUp() {
 
@@ -165,7 +191,7 @@ class BookingPage extends Component {
 
     render() {
         return(
-            <body>
+            <section>
                 <nav className='nav'>
                     <Nav />
                 </nav>
@@ -180,7 +206,7 @@ class BookingPage extends Component {
                 <footer className='footer'>
                     <Footer />
                 </footer>
-            </body>
+            </section>
         );
     }
 }
