@@ -163,7 +163,8 @@ img {
 
 }
 
-.header button {
+.header a {
+  text-decoration: none;
   background-color: #F4CE14;
   padding: 5px;
   padding-left: 15px;
@@ -174,7 +175,26 @@ img {
   border: 0px;
 }
 
-.header button:hover {
+.header a:hover {
+  background-color: white;
+  color: #F4CE14;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bookingHeader-btn {
+  text-decoration: none;
+  background-color: #F4CE14;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 10pt;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 0px;
+}
+
+.bookingHeader-btn:hover {
   background-color: white;
   color: #F4CE14;
   font-weight: bold;
@@ -267,7 +287,14 @@ img {
   font-size: 20pt;
 }
 
-.main-tittle button {
+.main a:hover {
+  background-color: #495E57;
+  color: #F4CE14;
+  cursor: pointer;
+}
+
+.main a {
+  text-decoration: none;
   background-color: #F4CE14;
   border-radius: 5px;
   border: 0px;
@@ -276,12 +303,6 @@ img {
   padding-right: 15px;
   font-size: 10pt;
   font-weight: bold;
-}
-
-.main-tittle button:hover {
-  background-color: #495E57;
-  color: #F4CE14;
-  cursor: pointer;
 }
 
 .card {
@@ -633,7 +654,15 @@ img {
   background-color: red;
 }
 
-.signUP-btn button {
+.signUp-btn button {
   width: 25vb;
+  height: 40px;
+  border-radius: 10px;
   background-color: #F4CE14;
+  font-size: 18pt;
+}
+
+.signUp-btn button:hover {
+  background-color: white;
+  color: #F4CE14;
 }

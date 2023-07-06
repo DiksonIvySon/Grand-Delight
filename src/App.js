@@ -22,11 +22,11 @@ class App extends Component {
       <BrowserRouter>
         <Routes>
             <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="menu" element={<Menu />} />
-            <Route path="bookingPage" element={<BookingPage />} />
-            <Route path="orderOnline" element={<OrderOnline />} />
-            <Route path="login" element={<Login />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/bookingPage" element={<BookingPage />} />
+            <Route path="/orderOnline" element={<OrderOnline />} />
+            <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     );

@@ -37,11 +37,11 @@ class Nav extends Component {
                 <div className={this.state.active}>
                     <ul>
                         <li><NavLink to="/">Home</NavLink></li>
-                        <li><NavLink to="about">About</NavLink></li>
-                        <li><NavLink to="menu">Menu</NavLink></li>
-                        <li><NavLink to="bookingPage">Reservation</NavLink></li>
-                        <li><NavLink to="orderOnline">Order Online</NavLink></li>
-                        <li><NavLink to="login">Login</NavLink></li>
+                        <li><NavLink to="/about">About</NavLink></li>
+                        <li><NavLink to="/menu">Menu</NavLink></li>
+                        <li><NavLink to="/bookingPage">Reservation</NavLink></li>
+                        <li><NavLink to="/orderOnline">Order Online</NavLink></li>
+                        <li><NavLink to="/login">Login</NavLink></li>
                     </ul>
                 </div>
                 <div className="hamburgerIcon" onClick={this.handleMenuIconClick}>

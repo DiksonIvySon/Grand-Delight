@@ -18,6 +18,11 @@ class Info extends Component {
                        Velit officia consequat duis enim velit mollit. Exercitation veniam consequat 
                        sunt nostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor 
                        do amet sint. Velit officia consequat duis enim velit mollit. 
+                       <br/>
+                       <br/>
+                       Little Lemon is owned by two Italian brothers, Mario and Adrian, who moved to 
+                       the United States to pursue their shared dream of owning a restaurant. To craft 
+                       the menu, Mario relies on family recipes and his experience as a chef in Italy.
                     </p>
                 </div>
                 <div className="info-images">

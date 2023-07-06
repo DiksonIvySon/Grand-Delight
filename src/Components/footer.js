@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-
+import { NavLink } from "react-router-dom";
 import restaurant from './assets/restaurant.jpg'
 
 class Footer extends Component {
@@ -18,12 +18,12 @@ class Footer extends Component {
                     <div>
                         <h4>Doormat <br /> Navigation</h4>
                         <ul>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">About</a></li>
-                            <li><a href="">Menu</a></li>
-                            <li><a href="">Reservation</a></li>
-                            <li><a href="">Order Online</a></li>
-                            <li><a href="">Login</a></li>
+                            <li><NavLink to="/">Home</NavLink></li>
+                            <li><NavLink to="/about">About</NavLink></li>
+                            <li><NavLink to="/menu">Menu</NavLink></li>
+                            <li><NavLink to="/bookingPage">Reservation</NavLink></li>
+                            <li><NavLink to="/orderOnline">Order Online</NavLink></li>
+                            <li><NavLink to="/login">Login</NavLink></li>
                         </ul>
                     </div>
                     <div>

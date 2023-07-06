@@ -108,10 +108,10 @@ function Reservation() {
     );
 }
 
-function Login() {
+export function LoginForm() {
     
     const [inputs, setInputs] = useState({
-        userName:"",
+        email:"",
         password:"",
     })
 
@@ -134,13 +134,13 @@ function Login() {
             </div>
             <form>
                 <div className="inputs">
-                    <label>Enter your name:
+                    <label>Enter your email:
                         <br/>
                         <input 
-                            type="text" 
+                            type="email" 
                             id="userName"
-                            name="userName" 
-                            placeholder="Dikson Manganye"
+                            name="email" 
+                            placeholder="ivySon@123"
                             onChange={handleChange}
                     />
                     </label>
@@ -151,7 +151,7 @@ function Login() {
                             type="text"
                             id="password" 
                             name="password" 
-                            placeholder="ivySon@123"
+                            placeholder="ivy123"
                             onChange={handleChange}
                         />
                     </label>
@@ -169,7 +169,7 @@ function Login() {
 }
 
 
-function SignUp() {
+export function SignUpForm() {
 
     const [buttonPopup, setButtonPopup] = useState(false);
     
@@ -199,8 +199,8 @@ class BookingPage extends Component {
                     <BookingHeader />
                 </header>
                 <main className='main-booking'>
-                    <Login />
-                    <SignUp/>
+                    <LoginForm />
+                    <SignUpForm/>
                     <Reservation />
                 </main>
                 <footer className='footer'>

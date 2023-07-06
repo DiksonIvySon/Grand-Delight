@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Nav from '../Components/nav';
 import Header from '../Components/homeHeader';
 import Footer from '../Components/footer';
+import { LoginForm } from './bookingPage';
+import { SignUpForm } from './bookingPage';
 
 
 class Login extends Component {
@@ -19,7 +21,8 @@ class Login extends Component {
             <Header />
         </header>
         <main>
-
+            <LoginForm />
+            <SignUpForm />
         </main>
         <footer className='footer'>
             <Footer />

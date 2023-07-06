@@ -21,7 +21,7 @@ class BookingHeader extends Component {
                            <em>please note that you wil have to create <br/>
                            an account if you don't have one</em>
                         </p>
-                        <button>Go back to home page</button>
+                        <button className="bookingHeader-btn">Go back to home page</button>
                     </div>
                     <div className="restaurantFoot-img">
                         <img src={restaurant}></img>

@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import greekSalad from './assets/greekSalad.jpg'
 import bruchetta from './assets/bruchetta.svg'
 import lemonDessert from './assets/lemonDessert.jpg'
+import { NavLink } from "react-router-dom"
 
 
 /*const foodTypeArray = {
@@ -64,7 +65,7 @@ class Specials extends Component {
                             <h1>This weeks specials!</h1>
                         </div>
                         <div>
-                            <button>Online Menu</button>
+                            <NavLink to="orderOnline">Order Online</NavLink>
                         </div>
                     </div>
                     <div className="food-card">

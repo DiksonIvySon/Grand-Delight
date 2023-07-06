@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-
+import { NavLink } from "react-router-dom";
 import restaurantFood from './assets/restaurantFood.jpg'
 
 class Header extends Component {
@@ -21,7 +21,7 @@ class Header extends Component {
                         recipes served with a modern <br />
                         twist.
                         </p>
-                        <button>Reserve a Table</button>
+                        <NavLink to="bookingPage">Reserve a Table</NavLink>
                     </div>
                     <div className="restaurantFoot-img">
                         <img src={restaurantFood}></img>
