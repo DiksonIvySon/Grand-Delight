@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-function SignupPopup(props) {
-
+function SignupPopup({toggleRenderSignUp}) {
+    const [submitted, setSubmitted] = useState(false);
     const [inputs, setInputs] = useState({
-        firstName:"",
+        firstName:"dshfikuj",
         lastName:"",
         email:"",
         phoneNumber:"",
@@ -11,18 +11,25 @@ function SignupPopup(props) {
     })
 
     const handleChange = (e) => {
-        const {name, value} = e.target;
-        setInputs((prev) => {
-            return {...prev, [name]: value}
-        })
+        const name = e.target.name;
+        const value = e.target.value;
+        const new_inputs = {...inputs, [name]: value}
+        setInputs(new_inputs)
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(inputs);
+        if(inputs.firstName=="" || inputs.lastName=="" || inputs.email=="" || inputs.phoneNumber=="" || inputs.password=="") {
+            alert("Please Enter all required information in the sing-up form")
+        }
+        else {
+            setSubmitted(true)
+            console.log(inputs);
+        }
+        
     }
 
-    return(props.trigger) ? (
+    return ( 
         <section className="signUp">
             <div>
                 <div className="reservation-title">
@@ -38,7 +45,6 @@ function SignupPopup(props) {
                                 id="firstName"
                                 name="firstName" 
                                 placeholder="Dikson"
-                                required
                                 onChange={handleChange}
                             />
                             </label>
@@ -51,7 +57,6 @@ function SignupPopup(props) {
                                 id="lastName" 
                                 name="lastName" 
                                 placeholder="Manganye"
-                                required
                                 onChange={handleChange}
                             />
                             </label>
@@ -96,16 +101,16 @@ function SignupPopup(props) {
                             </label>
                         </div>
                     </div>
-                    <div className="close-signUp-button" onClick={() => props.setTrigger(false)}>
-                        <button>Close</button>
-                    </div>
+                    
                     <div className="signUp-button">
                         <button type="submit" onClick={handleSubmit}>Sign up</button>
+                        <button onClick={toggleRenderSignUp}>Close form</button>
                     </div>
                 </form>
             </div>
+            
         </section>
-    ) : "";
+    );
 }
 
 export default SignupPopup;

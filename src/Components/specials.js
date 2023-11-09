@@ -4,51 +4,48 @@ import bruchetta from './assets/bruchetta.svg'
 import lemonDessert from './assets/lemonDessert.jpg'
 import { NavLink } from "react-router-dom"
 
-
-/*const foodTypeArray = {
+const foodTypes = {
     greekSalad: {title: "Greek Sala",
                 image: greekSalad,
-                price: 12.99,
+                price: 112.99,
                 description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons."
                 },
     bruchetta: {title: "Bruchetta",
                 image: bruchetta ,
-                price: 5.99,
+                price: 115.99,
                 description: "Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil. " ,
                },
     lemonDessert: {title: "Lemon Dessert",
                    image: lemonDessert,
-                   price: 5.00,
+                   price: 115.00,
                    description: "This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined." ,
                   }
-};*/
+};
 
-function FoodCard(props) {
-    const foodType = props.foodType;
+function FoodCard({foods}) {
 
     return(
         <div className="card">
-            <img src={foodType}></img>
+            <div className="card-image">
+                <img src={foods.image}></img>
+            </div>
             <div className="card-tittle">
                 <div>
-                    <h4>Greek Salad</h4>
+                    <h4>{foods.title}</h4>
                 </div>
                 <div>
-                    <h4 className="card-price">$12.99</h4>
+                    <h4 className="card-price">R{foods.price}</h4>
                 </div>
             </div>
             <p className="card-description">
-                The famous greek salad of 
-                crispy lettuce, peppers, olives
-                and our Chicago style feta 
-                cheese, garnished with 
-                crunchy garlic and rosemary 
-                croutons.   
+                {foods.description}  
             </p>
-            <h5 className="card-delivery">Order a delivery </h5>
+           {/* <h5 className="card-delivery">Order a delivery </h5>*/}
         </div>
     );
 }
+
+
 
 class Specials extends Component {
 
@@ -65,13 +62,13 @@ class Specials extends Component {
                             <h1>This weeks specials!</h1>
                         </div>
                         <div>
-                            <NavLink to="orderOnline">Order Online</NavLink>
+                           {/* <NavLink to="orderOnline">Order Online</NavLink>*/}
                         </div>
                     </div>
                     <div className="food-card">
-                        <FoodCard foodType={bruchetta}/>
-                        <FoodCard foodType={greekSalad}/>
-                        <FoodCard foodType={lemonDessert}/>
+                        <FoodCard foods={foodTypes.bruchetta} />
+                        <FoodCard foods={foodTypes.greekSalad}/>
+                        <FoodCard foods={foodTypes.lemonDessert}/>
                     </div>
                 </div>
             </section>

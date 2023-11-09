@@ -12,7 +12,6 @@ class Main extends Component {
         return(
             <main>
                 <Specials />
-                <Testimonials />
                 <Info />
             </main>
         );

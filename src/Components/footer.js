@@ -12,17 +12,17 @@ class Footer extends Component {
         return(
             <footer className="footer">
                 <div className="inFooter-container">
-                    <div>
+                    <div className="footer-img">
                         <img src={restaurant}></img>
                     </div>
                     <div>
-                        <h4>Doormat <br /> Navigation</h4>
+                        <h4>Quick Links</h4>
                         <ul>
                             <li><NavLink to="/">Home</NavLink></li>
                             <li><NavLink to="/about">About</NavLink></li>
                             <li><NavLink to="/menu">Menu</NavLink></li>
                             <li><NavLink to="/bookingPage">Reservation</NavLink></li>
-                            <li><NavLink to="/orderOnline">Order Online</NavLink></li>
+                            {/*<li><NavLink to="/orderOnline">Order Online</NavLink></li>*/}
                             <li><NavLink to="/login">Login</NavLink></li>
                         </ul>
                     </div>
@@ -35,11 +35,11 @@ class Footer extends Component {
                         </ul>
                     </div>
                     <div>
-                        <h4>Social Media Links</h4>
+                        <h4>Web Developer info</h4>
                         <ul>
-                            <li><a href="">Address</a></li>
-                            <li><a href="">phone number</a></li>
-                            <li><a href="">email</a></li>
+                            <li><a target="_blank" href="https://diksonivyson.github.io/My_Portfolio/">Professional Portfolio</a></li>
+                            <li><a target="_blank" href="https://www.linkedin.com/in/dikson-manganye-a8b773213/">LinkedIn Account</a></li>
+                            <li><a target="_blank" href="https://github.com/DiksonIvySon">Github Account</a></li>
                         </ul>
                     </div>
                 </div>

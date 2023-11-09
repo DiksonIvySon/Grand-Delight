@@ -40,7 +40,7 @@ class Nav extends Component {
                         <li><NavLink to="/about">About</NavLink></li>
                         <li><NavLink to="/menu">Menu</NavLink></li>
                         <li><NavLink to="/bookingPage">Reservation</NavLink></li>
-                        <li><NavLink to="/orderOnline">Order Online</NavLink></li>
+                        {/*<li><NavLink to="/orderOnline">Order Online</NavLink></li>*/}
                         <li><NavLink to="/login">Login</NavLink></li>
                     </ul>
                 </div>

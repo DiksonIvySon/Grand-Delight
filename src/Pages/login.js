@@ -6,6 +6,9 @@ import { LoginForm } from './bookingPage';
 import { SignUpForm } from './bookingPage';
 
 
+
+
+
 class Login extends Component {
   constructor() {
     super();
@@ -21,8 +24,7 @@ class Login extends Component {
             <Header />
         </header>
         <main>
-            <LoginForm />
-            <SignUpForm />
+            <LoginForm />    
         </main>
         <footer className='footer'>
             <Footer />

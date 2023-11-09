@@ -13,14 +13,7 @@ class BookingHeader extends Component {
                 <div>
                     <div>
                         <h1 className="header-tittle">Little Lemon</h1>
-                        <h3 className="restaurant-location">Chicago</h3>
-                        <p>Welcome to the reservation page,<br />
-                           here you can make you reservation <br />
-                           please feel free to Contact the  <br />
-                           restaurant if there is a problem<br />
-                           <em>please note that you wil have to create <br/>
-                           an account if you don't have one</em>
-                        </p>
+                        <h3 className="restaurant-location">South Africa</h3>
                         <button className="bookingHeader-btn">Go back to home page</button>
                     </div>
                     <div className="restaurantFoot-img">

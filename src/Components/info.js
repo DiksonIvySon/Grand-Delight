@@ -26,6 +26,9 @@ class Info extends Component {
                     </p>
                 </div>
                 <div className="info-images">
+                    <div className="imageA">
+                        <img src={MarioAndAdrianA} ></img>
+                    </div>
                     <div className="imageB">
                         <img src={MarioAndAdrianB} ></img>
                     </div>
