@@ -147,7 +147,6 @@ img {
 /* styling the header ...........................................................................................................*/
 
 .header {
-  position: relative;
   margin-inline: 10px;
   border-radius: 10px 10px 0px 0px;
   background: linear-gradient(180deg,
@@ -158,24 +157,20 @@ img {
 }
 
 .header-heading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
+  text-align: center;
 }
 
-  .header-heading h1 {
-    font-size: 80px;
-    color: gray;
-    z-index: -100;
-  }
+.header-heading h1 {
+  font-size: 80px;
+  color: gray;
+  margin: 0;
+}
 
 .header > div{
   margin-left: var(--side-margin);
   margin-right: var(--side-margin);
   display: flex;
   justify-content: space-between;
-
 }
 
 .header a {

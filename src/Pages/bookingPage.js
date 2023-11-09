@@ -264,6 +264,9 @@ class BookingPage extends Component {
                     <BookingHeader />
                 </header>
                 <main className='main-booking'>
+                    <div className="header-heading">
+                        <h1>Reservation</h1>
+                    </div>
                     <Reservation />
                 </main>
                 <footer className='footer'>

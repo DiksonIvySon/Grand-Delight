@@ -24,6 +24,9 @@ class Login extends Component {
             <Header />
         </header>
         <main>
+            <div className="header-heading">
+                <h1>Login</h1>
+            </div>
             <LoginForm />    
         </main>
         <footer className='footer'>

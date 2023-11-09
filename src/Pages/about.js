@@ -20,6 +20,9 @@ class About extends Component {
             <Header />
         </header>
         <main>
+            <div className="header-heading">
+               <h1>About</h1>
+            </div>
             <Info/>
         </main>
         <footer className='footer'>

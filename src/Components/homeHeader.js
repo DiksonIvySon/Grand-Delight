@@ -27,9 +27,6 @@ class Header extends Component {
                         <img src={restaurantFood}></img>
                     </div>
                 </div>
-                <div className="header-heading">
-                    <h1>Reservation</h1>
-                </div>
             </header>
         );
     }
