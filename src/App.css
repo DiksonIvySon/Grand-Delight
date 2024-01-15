@@ -313,27 +313,9 @@ img {
   font-size: 20pt;
 }
 
-.main a:hover {
-  background-color: #495E57;
-  color: #F4CE14;
-  cursor: pointer;
-}
-
-.main a {
-  text-decoration: none;
-  background-color: #F4CE14;
-  border-radius: 5px;
-  border: 0px;
-  padding: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-  font-size: 10pt;
-  font-weight: bold;
-}
-
 .card {
   width: 370px;
-  height: 400px;
+  height: 360px;
   background-color: #EDEFEE;
   border-radius: 15px 15px 0px 0px ;
   margin-bottom: 20px;
@@ -357,15 +339,21 @@ img {
   justify-content: space-between;
   align-items: center;
   margin: 10px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.card-tittle h4 {
+  font-size: 20px;
+  margin: 5px 0px;
 }
 
 .card .card-price {
-  color: #EE9972;
+  color: burlywood;
 }
 
 .card .card-description {
   margin: 10px;
-  font-size: 10pt;
+  font-size: 11pt;
 }
 
 .card .card-delivery {

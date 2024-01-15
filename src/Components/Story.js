@@ -1,10 +1,11 @@
 import React from 'react'
+import SectionHeader from './SectionHeader'
 
 function story() {
   return (
     <div className='storySection'>
         <div className='story-text'>
-            <span>Our story</span>
+            <SectionHeader SectionHeader_text="Our Story"/>
         </div>
     </div>
   )

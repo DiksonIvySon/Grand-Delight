@@ -1,0 +1,28 @@
+.intro-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.intro-about > div {
+    max-width:800px;
+}
+
+.primary-btn {
+    background-color: transparent;
+    border: 1px solid burlywood;
+    border-radius: 0px;
+    text-decoration: none;
+    padding: 5px 15px;
+    font-size: 20px;
+    color: burlywood;
+    transition: 0.4s;
+}
+
+.primary-btn:hover {
+    background-color: burlywood;
+    border: 1px solid #F7F1EA;
+    color: black;
+}
