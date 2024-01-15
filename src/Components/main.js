@@ -6,6 +6,7 @@ import Testimonials from "./testimonials";
 import Info from "./info";
 import Story from "./Story";
 import SectionHeader from "./SectionHeader";
+import MenuIntro from "./MenuIntro";
 import { NavLink } from "react-router-dom";
 
 function Main() {
@@ -27,6 +28,7 @@ function Main() {
             </div>
             <Specials />
             <Story />
+            <MenuIntro />
             <Info />
         </main>
     );

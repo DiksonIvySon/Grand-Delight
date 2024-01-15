@@ -2,10 +2,10 @@ import React from 'react';
 import './SectionHeader.css';
 import { GiKnifeFork } from "react-icons/gi";
 
-function SectionHeader({SectionHeader_text}) {
+function SectionHeader({SectionHeader_text, SectionHeader_color}) {
   return (
     <div className='sectionHeader'>
-        <div className='sectionHeader-container'>
+        <div className='sectionHeader-container' id={SectionHeader_color}>
             <GiKnifeFork className='fork-icon'/>
             <div>
                 <hr/>

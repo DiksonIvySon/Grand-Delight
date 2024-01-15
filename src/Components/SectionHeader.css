@@ -20,6 +20,7 @@
 
 .fork-icon {
     font-size: 35px;
+    color: red;
 }
 
 .sectionHeader p {
@@ -32,6 +33,10 @@
     height: 1px;
     background-color: black;
     border: none;
+}
+
+#darkMode P, GiKnifeFork {
+    color: burlywood;
 }
 
 /* Created glass animation */
