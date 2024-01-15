@@ -1,0 +1,60 @@
+.sectionHeader {
+    position: relative;
+    overflow: hidden;
+}
+
+.sectionHeader .sectionHeader-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sectionHeader > div > div {
+    min-width: 200px;
+    text-align: center;
+}
+
+.fork-icon {
+    font-size: 35px;
+}
+
+.sectionHeader p {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.sectionHeader hr {
+    height: 1px;
+    background-color: black;
+    border: none;
+}
+
+/* Created glass animation */
+.sectionHeader-container::before {
+    content: '';
+    position: absolute;
+    height: 250px;
+    width: 40px;
+    background: rgba(255,255,255,0.9);
+    top: 0px;
+    transition: 0.7s;
+    animation: headerGlass 4s ease-in-out 1s infinite alternate;
+}
+
+@keyframes headerGlass {
+    0% {
+        transform: skewX(30deg) translateX(350px);
+    }
+    30% {
+        transform: skewX(30deg) translateX(-250px);
+    }
+    100% {
+        transform: skewX(30deg) translateX(-150px);
+    }
+}
+
+

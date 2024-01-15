@@ -19,7 +19,7 @@ class Home extends Component {
         <header className='header'>
             <Header />
         </header>
-        <main className='main'>
+        <main className='main'> 
             <Main />
         </main>
         <footer className='footer'>

@@ -1,21 +1,20 @@
-import React, {Component} from "react";
+import React from "react";
 import Specials from "./specials";
 import Testimonials from "./testimonials";
 import Info from "./info";
+import Story from "./Story";
+import SectionHeader from "./SectionHeader";
 
-class Main extends Component {
-    constructor() {
-        super();
-    }
-
-    render() {
-        return(
-            <main>
-                <Specials />
-                <Info />
-            </main>
-        );
-    }
+function Main() {
+    
+    return(
+        <main>
+            <SectionHeader />
+            <Specials />
+            <Story />
+            <Info />
+        </main>
+    );
 }
 
 export default Main;
