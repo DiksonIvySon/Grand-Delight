@@ -171,46 +171,7 @@ img {
   margin-right: var(--side-margin);
   display: flex;
   justify-content: space-between;
-}
-
-.header a {
-  text-decoration: none;
-  background-color: #F4CE14;
-  padding: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-  font-size: 10pt;
-  font-weight: bold;
-  border-radius: 0px;
-  border: 0px;
-  transition: 0.3s;
-}
-
-.header a:hover {
-  background-color: white;
-  color: #F4CE14;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.bookingHeader-btn {
-  text-decoration: none;
-  background-color: #F4CE14;
-  padding: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-  font-size: 10pt;
-  font-weight: bold;
-  border-radius: 0px;
-  border: 0px;
-  transition: 0.3s;
-}
-
-.bookingHeader-btn:hover {
-  background-color: white;
-  color: #F4CE14;
-  font-weight: bold;
-  cursor: pointer;
+  align-items: center;
 }
 
 .restaurantFoot-img {
@@ -225,32 +186,6 @@ img {
   border-radius: 15px;
   margin-top: 15px;
 }
-
-.header-tittle {
-  font-size: 20pt;
-  margin: 0px;
-  margin-top: 15px;
-  padding: 0px;
-  border: 0px;
-  color: #F4CE14;
-}
-
-.restaurant-location {
-  font-size: 18pt;
-  margin: 0px;
-  border: 0px;
-  padding: 0px;
-  color: white;
-}
-
-.header p {
-  color: white;
-  padding: 0px;
-  margin: 0px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
 
 /* styling the footer ..................................................................................................*/
 

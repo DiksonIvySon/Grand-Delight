@@ -8,7 +8,6 @@ import Story from "./Story";
 import SectionHeader from "./SectionHeader";
 import MenuIntro from "./MenuIntro";
 import PlaceIntro from "./PlaceIntro";
-import Logo from "./Logo";
 import { NavLink } from "react-router-dom";
 
 function Main() {
