@@ -189,7 +189,14 @@ img {
 }
 
 /* styling the footer ..................................................................................................*/
+.footer {
+  padding: 30px;
+}
 
+.footer .footer-logo {
+  display: flex;
+  justify-content: center;
+}
 
 .inFooter-container {
   display: flex;
@@ -214,6 +221,10 @@ img {
   border-radius: 15px;
 }
 
+.footer div h4 {
+  margin-top: 0;
+}
+
 .footer div ul {
   margin-left: 0px;
   padding-left: 0px;
@@ -229,7 +240,13 @@ img {
 }
 
 .footer div ul li a:hover {
-  color: #F4CE14;
+  color: burlywood;
+}
+
+.footer hr {
+  height: 10px;
+  background-color: burlywood;
+  border: none;
 }
 
 /* styling the main section .................................................................................................................................*/

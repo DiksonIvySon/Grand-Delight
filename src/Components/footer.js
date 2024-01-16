@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { NavLink } from "react-router-dom";
+import Logo from "./Logo";
 import restaurant from './assets/restaurant.jpg'
 
 class Footer extends Component {
@@ -11,6 +12,9 @@ class Footer extends Component {
     render() {
         return(
             <footer className="footer">
+                <div className="footer-logo">
+                    <Logo />
+                </div>
                 <div className="inFooter-container">
                     <div className="footer-img">
                         <img src={restaurant}></img>
@@ -22,7 +26,7 @@ class Footer extends Component {
                             <li><NavLink to="/about">About</NavLink></li>
                             <li><NavLink to="/menu">Menu</NavLink></li>
                             <li><NavLink to="/bookingPage">Reservation</NavLink></li>
-                            {/*<li><NavLink to="/orderOnline">Order Online</NavLink></li>*/}
+                            <li><NavLink to="/orderOnline">Open cart</NavLink></li>
                             <li><NavLink to="/login">Login</NavLink></li>
                         </ul>
                     </div>
@@ -42,6 +46,10 @@ class Footer extends Component {
                             <li><a target="_blank" href="https://github.com/DiksonIvySon">Github Account</a></li>
                         </ul>
                     </div>
+                </div>
+                <hr />
+                <div>
+                    <p>Copyright @ 2024 Dikson Thabo Manganye All rights reserved</p>
                 </div>
             </footer>
         );
