@@ -1,8 +1,9 @@
 import React, {Component} from "react";
-import Logo from './assets/Logo.svg';
+import GD_Logo from '../images/GD-Logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { NavLink } from "react-router-dom";
+import { FaCartArrowDown } from "react-icons/fa";
 
 class Nav extends Component {
     constructor() {
@@ -32,7 +33,7 @@ class Nav extends Component {
         return(
             <div className="navigation">
                 <div>
-                    <img src={Logo} alt="logo"></img>
+                    <img src={GD_Logo} alt="logo"></img>
                 </div>
                 <div className={this.state.active}>
                     <ul>
@@ -40,9 +41,11 @@ class Nav extends Component {
                         <li><NavLink to="/about">About</NavLink></li>
                         <li><NavLink to="/menu">Menu</NavLink></li>
                         <li><NavLink to="/bookingPage">Reservation</NavLink></li>
-                        {/*<li><NavLink to="/orderOnline">Order Online</NavLink></li>*/}
                         <li><NavLink to="/login">Login</NavLink></li>
                     </ul>
+                </div>
+                <div className="cart-icon-container">
+                    <NavLink to="/orderOnline"><FaCartArrowDown className="card-icon"/></NavLink>
                 </div>
                 <div className="hamburgerIcon" onClick={this.handleMenuIconClick}>
                     <FontAwesomeIcon icon={faBars} className="icon"/>

@@ -72,16 +72,17 @@ img {
 }
 
 .nav ul li a:hover {
-  color: #F4CE14;
+  color: burlywood;
   font-weight: bolder;
-  font-size: 12pt;
-  background-color: #495E57;
-  border-radius: 5px;
+}
+
+.navigation .cart-icon-container .card-icon {
+  font-size: 35px;
 }
 
 /*making active links to stay highlighted*/
 .navigation a.active {
-  color: #F4CE14;
+  color: burlywood;
 }
 
 .hamburgerIcon {
