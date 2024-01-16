@@ -23,6 +23,6 @@
 
 .primary-btn:hover {
     background-color: burlywood;
-    border: 1px solid #F7F1EA;
+    border: 1px solid burlywood;
     color: black;
 }

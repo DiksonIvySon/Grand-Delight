@@ -31,7 +31,7 @@ function Main() {
             <Story />
             <MenuIntro />
             <PlaceIntro />
-            <Info />
+            
         </main>
     );
 }
