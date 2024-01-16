@@ -1,0 +1,50 @@
+.placeIntro-container {
+    margin: 20px 0px 60px 0px;
+}
+
+.placeIntro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.placeIntro > div {
+    max-width:800px;
+}
+
+.placeIntro-links .primary-btn {
+    margin-inline: 10px;
+}
+
+.placeIntro-images {
+    position: relative;
+    max-width: 100%;
+    height: 400px;
+    margin: 20px 0px 60px 0px;
+}
+
+.placeIntro-images .restaurant3{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.placeIntro-images .restaurant2{
+    max-width: 250px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    translate: -50%;
+}
+
+.placeIntro-images .restaurant4{
+    max-width: 250px;
+    border-radius: 20px;
+    position: absolute;
+    top: 30%;
+    right: -250px;
+    translate: -50% -50%;
+}
