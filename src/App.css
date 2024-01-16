@@ -298,11 +298,6 @@ img {
 
 /* styling the main section .................................................................................................................................*/
 
-.main {
-  margin-left: var(--main-side-margin);
-  margin-right: var(--main-side-margin);
-}
-
 .main-tittle {
   display: flex;
   justify-content: space-between;

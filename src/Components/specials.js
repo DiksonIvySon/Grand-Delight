@@ -55,7 +55,7 @@ class Specials extends Component {
  
     render() {
         return(
-            <section className="main">
+            <section className="main section-margin">
                 <div>
                     <div className="main-tittle">
                         <div>

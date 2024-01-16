@@ -23,12 +23,11 @@ function MenuIntro() {
                     approach to cuisine,”. 
                 </p>
                 <div>
-                    <h4>Book Through Call</h4>
+                    <h4>Grand Delight</h4>
                 </div>
-                <NavLink className='primary-btn' to="/menu">Read More</NavLink>
+                <NavLink className='primary-btn' to="/menu">View Menu</NavLink>
             </div>
         </div>
-        <img className='beefRibs1' src={beefRibs1} alt='Beef ribs image'></img>
     </div> 
   )
 }

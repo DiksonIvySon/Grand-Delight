@@ -10,7 +10,7 @@ import MarioAndAdrianB from './assets/MarioAndAdrianB.jpg';
 
 function story() {
   return (
-    <div className='storySection-container'>
+    <div className='storySection-container section-margin'>
         <SectionHeader SectionHeader_text="Our Story"/>
         <div className='storySection'>
             <div className='story-text'>
