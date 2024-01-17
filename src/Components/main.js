@@ -8,6 +8,7 @@ import Story from "./Story";
 import SectionHeader from "./SectionHeader";
 import MenuIntro from "./MenuIntro";
 import PlaceIntro from "./PlaceIntro";
+import OfferMenu from "./OfferMenu";
 import { NavLink } from "react-router-dom";
 
 function Main() {
@@ -31,7 +32,7 @@ function Main() {
             <Story />
             <MenuIntro />
             <PlaceIntro />
-            
+            <OfferMenu />
         </main>
     );
 }
