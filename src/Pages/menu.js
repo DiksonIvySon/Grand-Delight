@@ -4,6 +4,7 @@ import Header from '../Components/homeHeader';
 import Footer from '../Components/footer';
 import Specials from '../Components/specials';
 import SectionHeader from '../Components/SectionHeader';
+import OfferMenu from '../Components/OfferMenu';
 
 import { NavLink } from "react-router-dom";
 
@@ -308,7 +309,7 @@ class Menu extends Component {
             <Header />
         </header>
         <main>
-            <Specials />
+            <OfferMenu />
             <div className='menu'>
                 <SectionHeader SectionHeader_text="Our Signature Dish Menu"/>
                 <div className='SignatureDish-menu'>
@@ -334,6 +335,7 @@ class Menu extends Component {
                     <MenuItem foods={foodTypes.greekSalad}/>
                     <MenuItem foods={foodTypes.Tacos}/>
                 </div>
+                <Specials />
                 <SectionHeader SectionHeader_text="Desserts and Breakfast"/>
                 <div className='dessertsAndBreakfast'>
                     <div className='Desserts'>
