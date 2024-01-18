@@ -26,6 +26,14 @@ import Eggs_Benedict from '../Components/assets/Eggs_Benedict.webp';
 import Cheese_Sandwich from '../Components/assets/Cheese_Sandwich.webp';
 import Yogurt_Parfait from '../Components/assets/Yogurt_Parfait.webp';
 import French_Toast from '../Components/assets/French_Toast.webp';
+import Baked_Goat_Cheese from '../Components/assets/Baked_Goat_Cheese.webp';
+import Garlicky_Braised_Lamb from '../Components/assets/Garlicky_Braised_Lamb.webp';
+import Ham_Steaks from '../Components/assets/Ham_Steaks.webp';
+import Poached_Eggs from '../Components/assets/Poached_Eggs.webp';
+import Seared_Salmon from '../Components/assets/Seared_Salmon.webp';
+import Spaghetti from '../Components/assets/Spaghetti.webp';
+import Swordfish from '../Components/assets/Swordfish.webp';
+import Vegetable from '../Components/assets/Vegetable.webp';
 
 /* dinks images */
 import cock_pepsi from '../Components/assets/cock_pepsi.jpg'
@@ -85,7 +93,51 @@ const foodTypes = {
                 image: tacos,
                 price: 134.72,
                 description: "Traditional Mexican beef tacos are made with marinated sliced or shredded beef on soft corn tortillas." ,
+                },
+
+    // Signature dishes.
+
+    Poached_Eggs: {title: "Poached Eggs",
+                image: Poached_Eggs,
+                price: 134.72,
+                description: "Poached Eggs with Red Wine Sauce" ,
+                },
+    Garlicky_Braised_Lamb: {title: "Garlicky Braised Lamb",
+                image: Garlicky_Braised_Lamb,
+                price: 134.72,
+                description: "Garlick Braised Lamb Shank, Sweet Pepper" ,
+                },
+    Baked_Goat_Cheese: {title: "Baked Goat Cheese",
+                image: Baked_Goat_Cheese,
+                price: 134.72,  
+                description: "Baked Goat Cheese Salad" ,
+                },
+    Seared_Salmon: {title: "Seared Salmon",
+                image: Seared_Salmon,
+                price: 134.72,
+                description: "Seared Salmon with Summer Vegetables" ,
+                },
+    Swordfish: {title: "Swordfish",
+                image: Swordfish,
+                price: 134.72,
+                description: "Swordfish Sicilian-Style" ,
+                },
+    Ham_Steaks: {title: "Ham Steaks",
+                image: Ham_Steaks,
+                price: 134.72,
+                description: "Ham Steaks in Madeira Sauce" ,
+                },
+    Spaghetti: {title: "Spaghetti",
+                image: Spaghetti,
+                price: 134.72,
+                description: "Spaghetti with Clams and Braised Greens" ,
+                },
+    Vegetable: {title: "Vegetable",
+                image: Vegetable,
+                price: 134.72,
+                description: "Vegetable Hot-and-Sour Soup" ,
                 }
+                
   
 };
 
@@ -128,7 +180,7 @@ const dessertS = {
     French_Toast: {title: "French Toast",
             image: French_Toast,
             price: 115.88,
-            description: " white, whole wheat, brioche, cinnamon-raisin, Italian, or French! Delicious served hot with butter and maple syrup." ,
+            description: "white, whole wheat, brioche, cinnamon-raisin, Italian, or French! Delicious served hot with butter and maple syrup." ,
            },
 }
 
@@ -193,6 +245,32 @@ function MenuItem({foods}) {
   )
 }
 
+function SignatureDish({foods}) {
+
+    return (
+        <div className="signatureDish-container">
+            <div>
+                <div className="signatureDish-info">
+                    <div className="signatureDish-image">
+                        <img src={foods.image} alt="food item image"></img>
+                    </div>
+                    <div className='signatureDish-img-des-info'>
+                        <p className="signatureDish-description">{foods.description}</p>
+                        <div className='priceAndTitle'>
+                            <div className="signatureDish-price">
+                                <h3>R{foods.price}</h3>
+                            </div>
+                            <div className='signatureDish-btn'>
+                                <NavLink className='primary-btn' to="/about">Add To Cart</NavLink>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+  }
+
 function DrinkItem({drinks}) {
 
   return (
@@ -232,6 +310,17 @@ class Menu extends Component {
         <main>
             <Specials />
             <div className='menu'>
+                <SectionHeader SectionHeader_text="Our Signature Dish Menu"/>
+                <div className='SignatureDish-menu'>
+                    <SignatureDish foods={foodTypes.Baked_Goat_Cheese}/>
+                    <SignatureDish foods={foodTypes.Garlicky_Braised_Lamb}/>
+                    <SignatureDish foods={foodTypes.Ham_Steaks}/>
+                    <SignatureDish foods={foodTypes.Poached_Eggs}/>
+                    <SignatureDish foods={foodTypes.Seared_Salmon}/>
+                    <SignatureDish foods={foodTypes.Spaghetti}/>
+                    <SignatureDish foods={foodTypes.Swordfish}/>
+                    <SignatureDish foods={foodTypes.Vegetable}/>
+                </div>
                 <SectionHeader SectionHeader_text="Traditional Menu"/>
                 <div className='traditional-menu'>
                     <MenuItem foods={foodTypes.Bunny_chow}/>
