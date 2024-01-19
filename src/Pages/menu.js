@@ -335,9 +335,12 @@ class Menu extends Component {
                         <DrinkItem drinks={drinksType.redbull}/>
                     </div>
                     <p className='section-margin'>
-                        Please note that alcohol drinks are only available on seat in and no online orders.
+                        Please note that the following are only available on seat in (no online orders).
                     </p>
-                    <NavLink className='primary-btn2' to="/about">Open Alcohol Menu</NavLink>
+                    <p className='section-margin'>
+                        Alcohol Drinks | Hot Drinks | Milkshakes | Some Cold Drinks
+                    </p>
+                    <NavLink className='primary-btn2' to="/drinksPage">Open Complete Drinks Menu</NavLink>
                 </div> 
                 <SectionHeader SectionHeader_text="Traditional Menu"/>
                 <div className='traditional-menu section-margin'>

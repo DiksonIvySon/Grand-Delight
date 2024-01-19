@@ -9,6 +9,7 @@ import Login from './Pages/login';
 import Menu from './Pages/menu';
 import OrderOnline from './Pages/orderOnline';
 import ReservationConfirmation from './Pages/reservationComfirmation';
+import DrinksPage from './Pages/DrinksPage';
 
 
 
@@ -25,6 +26,7 @@ class App extends Component {
             <Route path="/about" element={<About />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/bookingPage" element={<BookingPage />} />
+            <Route path="/drinksPage" element={<DrinksPage />} />
             {/*<Route path="/orderOnline" element={<OrderOnline />} />*/}
             <Route path="/login" element={<Login />} />
         </Routes>

@@ -1,0 +1,19 @@
+.drinksPage-container {
+    display: flex;
+    justify-content: center;
+}
+
+.drinksPage-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin: 60px 0px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.drinksPage-content img {
+    width: 100%;
+    object-fit: contain;
+}
