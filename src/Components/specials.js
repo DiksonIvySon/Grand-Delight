@@ -40,7 +40,6 @@ function FoodCard({foods}) {
             <p className="card-description">
                 {foods.description}  
             </p>
-           {/* <h5 className="card-delivery">Order a delivery </h5>*/}
         </div>
     );
 }
@@ -58,12 +57,7 @@ class Specials extends Component {
             <section className="main section-margin">
                 <div>
                     <div className="main-tittle">
-                        <div>
-                            <h1>This weeks specials!</h1>
-                        </div>
-                        <div>
-                           {/* <NavLink to="orderOnline">Order Online</NavLink>*/}
-                        </div>
+                        <h1>This weeks specials!</h1>
                     </div>
                     <div className="food-card">
                         <FoodCard foods={foodTypes.bruchetta} />

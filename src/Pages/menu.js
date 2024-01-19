@@ -334,7 +334,7 @@ class Menu extends Component {
                         <DrinkItem drinks={drinksType.grapetiser}/>
                         <DrinkItem drinks={drinksType.redbull}/>
                     </div>
-                    <p>
+                    <p className='section-margin'>
                         Please note that alcohol drinks are only available on seat in and no online orders.
                     </p>
                     <NavLink className='primary-btn2' to="/about">Open Alcohol Menu</NavLink>
