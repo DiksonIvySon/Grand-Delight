@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Nav from '../Components/nav';
 import Header from '../Components/homeHeader';
 import Footer from '../Components/footer';
-import Info from '../Components/info';
 
 
 class About extends Component {
@@ -23,7 +22,7 @@ class About extends Component {
             <div className="header-heading">
                <h1>About</h1>
             </div>
-            <Info/>
+            
         </main>
         <footer className='footer'>
             <Footer />

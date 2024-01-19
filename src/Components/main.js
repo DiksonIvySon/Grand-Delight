@@ -3,7 +3,6 @@ import './Main.css';
 
 import Specials from "./specials";
 import Testimonials from "./testimonials";
-import Info from "./info";
 import Story from "./Story";
 import SectionHeader from "./SectionHeader";
 import MenuIntro from "./MenuIntro";

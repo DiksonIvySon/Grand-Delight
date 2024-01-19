@@ -38,13 +38,8 @@ import Spaghetti from '../Components/assets/Spaghetti.webp';
 import Swordfish from '../Components/assets/Swordfish.webp';
 import Vegetable from '../Components/assets/Vegetable.webp';
 
-/* dinks images */
-import cock_pepsi from '../Components/assets/cock_pepsi.jpg'
-import grap_apple from '../Components/assets/grap_apple.jpeg'
-import redbull from '../Components/assets/redbull.jpeg'
-import blackLabol from '../Components/assets/blackLabol.jpeg'
-import corona from '../Components/assets/corona.jpeg'
-import heineken from '../Components/assets/heineken.jpeg'
+/* drinks images */
+
 
 const foodTypes = {
     greekSalad: {title: "Greek Salad",
@@ -187,27 +182,35 @@ const dessertS = {
            },
 }
 
-const drinks = {
-  cock_pepsi: {title: "Coka Cola or Pepsi",
+const drinksType = {
+    cock: {title: "Coka Cola",
             price: 18,
             },
 
-  grap_apple: {title: "Grapetiser or Appletiser",
+    pepsi: {title: "Pepsi",
+            price: 18,
+            },
+
+    grapetiser: {title: "Grapetiser",
             price: 23,
             },
 
-  redbull: {title: "Redbull",
+    appletiser: {title: "Appletiser",
+            price: 23,
+            },
+
+    redbull: {title: "Redbull",
             price: 26,
             },
 
-  blackLabol: {title: "Black Labol",
+    Orange_Juice: {title: "Orange Juice",
             price: 35,
             },
-  corona: {title: "Corona",
+    Apple_Juice: {title: "Apple Juice",
             price: 37,
             },
 
-  heineken: {title: "Heineken",
+    Aloe_vera: {title: "Aloe Vera",
             price: 26,
             },
 }
@@ -309,7 +312,7 @@ class Menu extends Component {
             <OfferMenu />
             <div className='menu'>
                 <SectionHeader SectionHeader_text="Our Signature Dish Menu"/>
-                <div className='SignatureDish-menu'>
+                <div className='SignatureDish-menu section-margin'>
                     <SignatureDish foods={foodTypes.Baked_Goat_Cheese}/>
                     <SignatureDish foods={foodTypes.Garlicky_Braised_Lamb}/>
                     <SignatureDish foods={foodTypes.Ham_Steaks}/>
@@ -319,15 +322,25 @@ class Menu extends Component {
                     <SignatureDish foods={foodTypes.Swordfish}/>
                     <SignatureDish foods={foodTypes.Vegetable}/>
                 </div>
-                <SectionHeader SectionHeader_text="Drinks"/>
                 <div className='drinks-section'>
+                    <SectionHeader SectionHeader_text="Drinks"/>
+                    <div className='section-margin'>
+                        <DrinkItem drinks={drinksType.Apple_Juice}/>
+                        <DrinkItem drinks={drinksType.Orange_Juice}/>
+                        <DrinkItem drinks={drinksType.Aloe_vera}/>
+                        <DrinkItem drinks={drinksType.cock}/>
+                        <DrinkItem drinks={drinksType.pepsi}/>
+                        <DrinkItem drinks={drinksType.appletiser}/>
+                        <DrinkItem drinks={drinksType.grapetiser}/>
+                        <DrinkItem drinks={drinksType.redbull}/>
+                    </div>
                     <p>
-                        Please note that drinks are only available on seat in and no online orders
+                        Please note that alcohol drinks are only available on seat in and no online orders.
                     </p>
-                    <NavLink className='primary-btn2' to="/about">Add To Cart</NavLink>
+                    <NavLink className='primary-btn2' to="/about">Open Alcohol Menu</NavLink>
                 </div> 
                 <SectionHeader SectionHeader_text="Traditional Menu"/>
-                <div className='traditional-menu'>
+                <div className='traditional-menu section-margin'>
                     <MenuItem foods={foodTypes.Bunny_chow}/>
                     <MenuItem foods={foodTypes.Braai_Shisa_nyama}/>
                     <MenuItem foods={foodTypes.Bobotie}/>
@@ -341,7 +354,7 @@ class Menu extends Component {
                 </div>
                 <Specials />
                 <SectionHeader SectionHeader_text="Desserts and Breakfast"/>
-                <div className='dessertsAndBreakfast'>
+                <div className='dessertsAndBreakfast section-margin'>
                     <div className='Desserts'>
                         <h2>Desserts</h2>
                         <MenuItem foods={dessertS.Melktert}/>

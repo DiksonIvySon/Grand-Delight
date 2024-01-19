@@ -6,7 +6,6 @@ import { NavLink } from "react-router-dom";
 import restaurant from './assets/restaurant.jpg';
 import breakfast1 from '../images/breakfast1.png';
 import salad1 from '../images/salad1.png';
-import MarioAndAdrianB from './assets/MarioAndAdrianB.jpg';
 
 function story() {
   return (

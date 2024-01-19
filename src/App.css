@@ -365,11 +365,6 @@ img {
   margin: 10px auto;
 }
 
-.menu {
-  margin-left: var(--main-side-margin);
-  margin-right: var(--main-side-margin);
-}
-
 .foodItem-img-des {
   display: flex;
   gap: 20px;
@@ -479,6 +474,13 @@ img {
   flex-wrap: wrap;
 }
 
+.drinkItem-container {
+  min-width: 310px;
+  max-width: 700px;
+  flex: 1;
+  margin-inline: 20px;
+}
+
 .drinkItem-container hr {
   height: 1px;
   border: none;
@@ -515,9 +517,23 @@ img {
 }
 
 .menu .drinks-section {
+  background: linear-gradient(135deg, rgba(135, 140, 146, 0.1), rgb(70, 69, 69));
   text-align: center;
   margin-bottom: 80px;
+  padding: 40px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+.menu .drinks-section > div {
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 
 /*styling  the testimonials section */
 
