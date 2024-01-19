@@ -103,8 +103,8 @@ function SignupPopup({toggleRenderSignUp}) {
                     </div>
                     
                     <div className="signUp-button">
-                        <button type="submit" onClick={handleSubmit}>Sign up</button>
-                        <button onClick={toggleRenderSignUp}>Close form</button>
+                        <button className="primary-btn" type="submit" onClick={handleSubmit}>Sign up</button>
+                        <button className="primary-btn" onClick={toggleRenderSignUp}>Close form</button>
                     </div>
                 </form>
             </div>

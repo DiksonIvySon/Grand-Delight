@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Nav from "../Components/nav";
-import BookingHeader from "../Components/bookingHeader";
+import Header from "../Components/homeHeader";
 import Footer from "../Components/footer";
 import SignupPopup from "../Components/signupPopup";
 import { useState } from "react";
@@ -84,7 +84,7 @@ function Reservation() {
                         <img src={successfulPhoto}></img>
                     </div>
                 </div>
-                <button onClick={handleMadeReservation}>Make changes</button>
+                <button className="primary-btn" onClick={handleMadeReservation}>Make changes</button>
             </div>
             <div className={madeReservation}>
                 <div className="reservation-title">
@@ -132,6 +132,7 @@ function Reservation() {
                                 <label htmlFor="occasion">Occasion*</label>
                                 <br/>
                                 <select id="occasion" name="occasion" onChange={handleChange}> 
+                                    <option>Select</option>
                                     <option>Birthday</option>
                                     <option>Anniversary</option>
                                     <option>Family gathering</option>
@@ -144,6 +145,7 @@ function Reservation() {
                                 <label htmlFor="resTime">Choose time*
                                     <br/>
                                     <select id="resTime" name="resTime" onChange={handleChange}>
+                                        <option>Select</option>
                                         <option>16:00</option>
                                         <option>17:00</option>
                                         <option>18:00</option>
@@ -157,7 +159,7 @@ function Reservation() {
                         </div>
                     </div>
                     <div className="confirmButton">
-                        <button type="submit" onClick={handleSubmit}>Confirm Reservation</button>
+                        <button className="primary-btn" type="submit" onClick={handleSubmit}>Confirm Reservation</button>
                     </div>
                 </form>
             </div>
@@ -204,9 +206,6 @@ export function LoginForm(props) {
     return(
         <section >
             <div className="login">
-                <div className="login-title">
-                    <h1>Already have an account? <em>Login</em></h1>
-                </div>
                 <form>
                     <div className="inputs">
                         <label>Enter your email:
@@ -232,13 +231,13 @@ export function LoginForm(props) {
                         </label>
                     </div>
                     <div className="loginButton">
-                        <button type="submit" onClick={handleSubmit}>Log in</button>
+                        <button className="primary-btn" type="submit" onClick={handleSubmit}>Log in</button>
                     </div>
                     <div className="signUp-button">
                         <h4>Forgot your password</h4>
                         <h1>Don't have an account</h1>
                     </div>
-                    <button className="create-account-button" type="button" onClick={toggleRenderSignUp}>Create new Account</button>
+                    <button className="create-account-button primary-btn" type="button" onClick={toggleRenderSignUp}>Create new Account</button>
                 </form>
             </div>
             <div>
@@ -261,9 +260,9 @@ class BookingPage extends Component {
                     <Nav />
                 </nav>
                 <header className='header'>
-                    <BookingHeader />
+                    <Header />
                 </header>
-                <main className='main-booking'>
+                <main className='main-booking section-margin'>
                     <div className="header-heading">
                         <h1>Reservation</h1>
                     </div>
