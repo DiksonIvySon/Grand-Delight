@@ -7,6 +7,8 @@ import SectionHeader from '../Components/SectionHeader';
 import OfferMenu from '../Components/OfferMenu';
 
 import { NavLink } from "react-router-dom";
+import { IoAdd } from "react-icons/io5";
+
 
 /* food images */
 import greekSalad from '../Components/assets/greekSalad.jpg';
@@ -187,27 +189,25 @@ const dessertS = {
 
 const drinks = {
   cock_pepsi: {title: "Coka Cola or Pepsi",
-            image: cock_pepsi,
             price: 18,
             },
+
   grap_apple: {title: "Grapetiser or Appletiser",
-            image: grap_apple,
             price: 23,
             },
+
   redbull: {title: "Redbull",
-            image: redbull,
             price: 26,
             },
+
   blackLabol: {title: "Black Labol",
-            image: blackLabol,
             price: 35,
             },
   corona: {title: "Corona",
-            image: corona,
             price: 37,
             },
+
   heineken: {title: "Heineken",
-            image: heineken,
             price: 26,
             },
 }
@@ -275,22 +275,19 @@ function SignatureDish({foods}) {
 function DrinkItem({drinks}) {
 
   return (
-      <div className="foodItem-container">
-          <div>
-              <div className="foodItem-info">
-                  <div className="foodItem-image">
-                      <img src={drinks.image} alt="food item image"></img>
-                  </div>
-                  <div className="foodItem-price">
-                      <h3>R{drinks.price}</h3>
-                  </div>
-              </div>
-              <div>
-                  <h4 className="menuItem-title">{drinks.title}</h4>
-              </div>
-          </div>
-          <hr></hr>
-      </div>
+    <div className="drinkItem-container">
+        <div className='drinkItem'>
+            <div>
+                <h4 className="drinkItem-title">{drinks.title}</h4>
+                <h3>|</h3>
+                <div className="drinkItem-price">
+                    <h3>R{drinks.price}</h3>
+                </div>
+            </div>
+            <NavLink className='primary-btn2' to="/about">Add To Cart</NavLink>
+        </div>
+        <hr />
+    </div>
   )
 }
 
@@ -322,6 +319,13 @@ class Menu extends Component {
                     <SignatureDish foods={foodTypes.Swordfish}/>
                     <SignatureDish foods={foodTypes.Vegetable}/>
                 </div>
+                <SectionHeader SectionHeader_text="Drinks"/>
+                <div className='drinks-section'>
+                    <p>
+                        Please note that drinks are only available on seat in and no online orders
+                    </p>
+                    <NavLink className='primary-btn2' to="/about">Add To Cart</NavLink>
+                </div> 
                 <SectionHeader SectionHeader_text="Traditional Menu"/>
                 <div className='traditional-menu'>
                     <MenuItem foods={foodTypes.Bunny_chow}/>
@@ -353,17 +357,6 @@ class Menu extends Component {
                         <MenuItem foods={dessertS.French_Toast}/>
                     </div>
                 </div>
-                <SectionHeader SectionHeader_text="Drinks"/>
-                <h2>SOFT DRINKS</h2>
-                <div>
-                <DrinkItem drinks={drinks.cock_pepsi} />
-                <DrinkItem drinks={drinks.grap_apple} />
-                <DrinkItem drinks={drinks.redbull} />
-                </div>
-                <h2>BEERS</h2>
-                <DrinkItem drinks={drinks.blackLabol} />
-                <DrinkItem drinks={drinks.corona} />
-                <DrinkItem drinks={drinks.heineken} />
             </div>
         </main>
         <footer className='footer'>
