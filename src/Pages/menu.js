@@ -309,7 +309,7 @@ class Menu extends Component {
             <Header />
         </header>
         <main>
-            <OfferMenu />
+            <OfferMenu offering_btn_visibility="offering-btn-hide"/>
             <div className='menu'>
                 <SectionHeader SectionHeader_text="Our Signature Dish Menu"/>
                 <div className='SignatureDish-menu section-margin'>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './OfferMenu.css';
 import { NavLink } from "react-router-dom";
 
@@ -10,7 +10,8 @@ import starters1_image from '../images/starters1-image.jpg';
 import luxury_food from '../images/luxury-food.avif';
 import luxury_drinks from '../images/luxury-drinks.avif';
 
-function OfferMenu() {
+function OfferMenu({offering_btn_visibility}) {
+
   return (
     <div className='offerMenu-container section-margin'>
         <SectionHeader SectionHeader_text="What We Offer"/>
@@ -28,8 +29,8 @@ function OfferMenu() {
                    new-world approach to cuisine. The wine list has been designed in a way to 
                    convey the best on offer from around the world.
                 </p>
-                <NavLink className='primary-btn offering-btn' to="/menu">View Menu</NavLink>
-                <img src={luxury_food} alt='offering image'></img>
+                <NavLink className='primary-btn' id={offering_btn_visibility} to="/menu">View Menu</NavLink>
+                <img src={luxury_food} alt='offering image'></img> 
                 <h2>Mains</h2>
                 <p>Breakfast</p>
                 <p>Starter</p>

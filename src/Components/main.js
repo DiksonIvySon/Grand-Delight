@@ -31,7 +31,7 @@ function Main() {
             <Story />
             <MenuIntro />
             <PlaceIntro />
-            <OfferMenu />
+            <OfferMenu offering_btn_visibility="offering-btn-show"/>
         </main>
     );
 }
