@@ -1,5 +1,7 @@
+/* ── Place Intro (Space & Atmosphere) section ── */
+
 .placeIntro-container {
-    margin: 20px 0px 60px 0px;
+    margin: 40px 0 60px;
 }
 
 .placeIntro {
@@ -11,40 +13,98 @@
 }
 
 .placeIntro > div {
-    max-width:800px;
+    max-width: 800px;
+    width: 100%;
 }
 
-.placeIntro-links .primary-btn {
-    margin-inline: 10px;
+.placeIntro-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 16px 0;
 }
 
+/* ── Image grid — desktop: 3 overlapping cards, mobile: simple row ── */
 .placeIntro-images {
     position: relative;
-    max-width: 100%;
-    height: 400px;
-    margin: 20px 0px 60px 0px;
+    width: 100%;
+    height: 360px;
+    margin: 32px 0 80px;
 }
 
-.placeIntro-images .restaurant3{
+/* Centre image — fills the container */
+.placeIntro-images .restaurant3 {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 12px;
 }
 
-.placeIntro-images .restaurant2{
-    max-width: 250px;
-    border-radius: 20px;
+/* Left floating card */
+.placeIntro-images .restaurant2 {
+    width: 220px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
     position: absolute;
     top: 50%;
-    left: 0px;
-    translate: -50%;
+    left: -40px;
+    transform: translateY(-50%);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    border: 3px solid white;
 }
 
-.placeIntro-images .restaurant4{
-    max-width: 250px;
-    border-radius: 20px;
+/* Right floating card */
+.placeIntro-images .restaurant4 {
+    width: 220px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
     position: absolute;
-    top: 30%;
-    right: -250px;
-    translate: -50% -50%;
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    border: 3px solid white;
+}
+
+/* ── Responsive ── */
+@media screen and (max-width: 900px) {
+    /* Bring the side cards inside the container */
+    .placeIntro-images .restaurant2 {
+        left: 0;
+        width: 160px;
+        height: 140px;
+    }
+    .placeIntro-images .restaurant4 {
+        right: 0;
+        width: 160px;
+        height: 140px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    /* Stack into a simple column on mobile */
+    .placeIntro-images {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 32px;
+        position: static;
+    }
+
+    .placeIntro-images .restaurant2,
+    .placeIntro-images .restaurant3,
+    .placeIntro-images .restaurant4 {
+        position: static;
+        width: 100%;
+        height: 200px;
+        transform: none;
+        border: none;
+        box-shadow: none;
+    }
 }

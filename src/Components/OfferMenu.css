@@ -1,74 +1,118 @@
+/* ── What We Offer section ── */
 
+.offerMenu-container {
+    overflow: hidden;
+}
 
 .offerMenu {
     position: relative;
-    margin: 130px 0px 250px 0px;
+    margin: 60px 0 160px;
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr;
-    grid-template-rows: 1fr;
+    gap: 0;
 }
 
 .offerMenu .offering {
-    margin: 30px 20px;
-    height: 400px;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-.offerMenu .offering {
+    margin: 24px 16px;
+    z-index: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    min-height: 360px;
 }
 
 .offerMenu .offering h1 {
-    font-size: 45px;
-    margin-bottom: 0px;
+    font-size: 36px;
+    margin-bottom: 8px;
     font-family: 'Times New Roman', Times, serif;
+    line-height: 1.2;
 }
 
 .offerMenu .offering h2 {
-    font-size: 25px;
-    margin-bottom: 0px;
+    font-size: 22px;
+    margin-bottom: 4px;
     font-family: 'Times New Roman', Times, serif;
 }
 
 .offerMenu .offering p {
-    margin: 0px 0px 5px 0px;
+    margin: 0 0 4px;
     color: burlywood;
 }
 
 .offerMenu .offering #offering-btn-show {
-    max-width: 100px;
-    margin: 20px auto;
+    max-width: 140px;
+    margin: 16px auto;
 }
 
 .offerMenu .offering #offering-btn-hide {
-    max-width: 100px;
-    margin: 20px auto;
     display: none;
 }
 
+/* Wood background strip — desktop only */
 .woodBackground-container {
     width: 100%;
     height: 90px;
     position: absolute;
-    top: 180px;
+    top: 160px;
     left: 50%;
-    translate: -50% ;
+    translate: -50%;
+    z-index: 0;
 }
 
 .woodBackground-container .woodBackground {
     width: 100%;
-    height: 100px;
+    height: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
 
+/* Food images in the offering cards */
 .offerMenu .offering img {
     width: 100%;
-    height: 100%;
+    flex: 1;
     object-fit: cover;
-    border: 5px solid burlywood;
+    border: 4px solid burlywood;
+    min-height: 0;
+}
+
+/* Middle column */
+.offerMenu .middle-offering {
+    z-index: 2;
+}
+
+/* ── Responsive ── */
+@media screen and (max-width: 900px) {
+    .offerMenu {
+        grid-template-columns: 1fr 1fr;
+        margin: 40px 0 60px;
+    }
+
+    /* Move middle column to span full width on top */
+    .offerMenu .middle-offering {
+        grid-column: 1 / -1;
+        order: -1;
+        min-height: auto;
+    }
+
+    .woodBackground-container {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .offerMenu {
+        grid-template-columns: 1fr;
+        margin: 32px 0 40px;
+    }
+
+    .offerMenu .offering {
+        min-height: auto;
+    }
+
+    .offerMenu .offering img {
+        height: 200px;
+        flex: none;
+    }
 }

@@ -195,19 +195,114 @@ img {
 
 @media screen and (max-width: 850px) {
   :root {
-    --side-margin: 60px;
-    --main-side-margin: 32px;
+    --side-margin: 48px;
+    --main-side-margin: 28px;
   }
 }
 
 @media screen and (max-width: 600px) {
   :root {
-    --side-margin: 20px;
-    --main-side-margin: 16px;
+    --side-margin: 16px;
+    --main-side-margin: 14px;
   }
 
   .navigation {
     padding: 0 var(--side-margin);
+  }
+
+  /* Specials cards stack full width */
+  .card {
+    min-width: unset;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .food-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  /* Menu food items go full width and stack image above text */
+  .foodItem-container {
+    min-width: unset;
+    max-width: 100%;
+  }
+
+  .foodItem-img-des {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .foodItem-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .foodItem-description {
+    max-width: 100%;
+  }
+
+  /* Signature dishes go full width */
+  .signatureDish-container {
+    max-width: 100%;
+    min-width: unset;
+    width: 100%;
+  }
+
+  .menu .SignatureDish-menu {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  /* Reservation form full width on mobile */
+  .reservation form {
+    width: 100%;
+  }
+
+  .selections {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #resTime,
+  #occasion {
+    width: 100%;
+  }
+
+  /* Page title heading smaller on mobile */
+  .header-heading h1 {
+    font-size: 44px;
+  }
+
+  /* Testimonials stack */
+  .testimonials > div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .review-card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Footer stack */
+  .inFooter-container {
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  /* Desserts & Breakfast stack */
+  .dessertsAndBreakfast {
+    flex-direction: column;
+  }
+
+  /* Successful reservation details stack */
+  .successfulRes-details {
+    flex-direction: column;
+    gap: 20px;
   }
 }
 

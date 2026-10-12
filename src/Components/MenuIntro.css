@@ -1,40 +1,75 @@
+/* ── Menu Intro (Soul Food) section ── */
+
+.menuIntro-container {
+    overflow: hidden;
+}
 
 .menuIntro {
-    margin: 80px 0px;
+    margin: 60px 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 50px;
-    background: linear-gradient(135deg, rgba(52, 58, 66, 0.1), rgba(0, 0, 0, 1));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-.menuIntro .menuIntro-text {
-    margin: 30px auto;
-    padding-right: 20px;
-    text-align: center;
-    max-width: 350px;
-}
-
-.menuIntro-text p {
-    margin-top: 0;
-    color: white;
-}
-
-.menuIntro .menuIntro-text h1 {
-    font-size: 60px;
-    margin-top: 0;
-    font-family: 'Times New Roman', Times, serif;
+    gap: 0;
+    background: linear-gradient(135deg, rgba(52, 58, 66, 0.15), rgba(0, 0, 0, 0.95));
 }
 
 .menuIntro-images {
-    max-height: 100%;
-    max-width: 100%;
+    min-height: 380px;
+    overflow: hidden;
 }
 
 .menuIntro-images .lamskoteletten {
-    height: 100%;
     width: 100%;
+    height: 100%;
     object-fit: cover;
+    display: block;
+}
+
+.menuIntro .menuIntro-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 32px;
+    text-align: center;
+}
+
+.menuIntro-text h4 {
+    color: burlywood;
+    margin: 0;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10pt;
+}
+
+.menuIntro-text h1 {
+    font-size: 52px;
+    margin: 8px 0 16px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    line-height: 1.1;
+}
+
+.menuIntro-text p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    margin: 0 0 24px;
+}
+
+/* ── Responsive ── */
+@media screen and (max-width: 768px) {
+    .menuIntro {
+        grid-template-columns: 1fr;
+        margin: 40px 0;
+    }
+
+    .menuIntro-images {
+        min-height: 240px;
+    }
+
+    .menuIntro .menuIntro-text {
+        padding: 32px 24px;
+    }
+
+    .menuIntro-text h1 {
+        font-size: 36px;
+    }
 }
