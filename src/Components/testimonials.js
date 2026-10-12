@@ -1,89 +1,54 @@
-import React, {Component} from "react";
+import React from "react";
 import myImage from './assets/myImage.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
+const reviews = [
+  { name: "Madam", stars: 5, text: "An absolutely incredible experience. The food was divine and the atmosphere is unmatched in Sandton." },
+  { name: "Sam",   stars: 5, text: "From the moment we walked in, we felt like royalty. The Cape Malay curry is a must-try!" },
+  { name: "Rob",   stars: 4, text: "Exceptional service and beautifully presented dishes. Grand Delight truly lives up to its name." },
+  { name: "Max",   stars: 5, text: "The signature dishes are outstanding. We will definitely be coming back for our anniversary." },
+];
 
-const viewerObject = {
-        madam: {name: "Madam",
-                imageURL: "url",
-                stars: 4,
-                reviewText: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons."
-                },
-          max: {name: "Madam",
-                imageURL: "url",
-                stars: 4,
-                reviewText: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons."
-                },
-          sam: {name: "Madam",
-                imageURL: "url",
-                stars: 4,
-                reviewText: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons."
-                },
-          rob: {name: "Madam",
-                imageURL: "url",
-                stars: 4,
-                reviewText: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons."
-                }
-};
-
-function ReviewCard(props) {
-    
-
-    const userName = props.userName;
-
-    return(
-        <div className="review-card">
-            <div>
-                <div className="rating">
-                    <div>
-                        <h3>Rating</h3>
-                    </div>
-                    <div className="rating-stars">
-                        <FontAwesomeIcon icon={faStar} className="icon"/>
-                        <FontAwesomeIcon icon={faStar} className="icon"/>
-                        <FontAwesomeIcon icon={faStar} className="icon"/>
-                        <FontAwesomeIcon icon={faStar} className="icon"/>
-                        <FontAwesomeIcon icon={faStar} className="icon"/>
-                    </div>
-                </div>
-                <div className="reviewer-profile">
-                    <div>
-                        <img src={myImage}></img>
-                    </div>
-                    <div>
-                        <h4 className="reviewer-name">name</h4>
-                    </div>
-                </div>
-                <p className="review-text">
-                The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, 
-                garnished with crunchy garlic and rosemary croutons."
- 
-                </p>
-            </div>
+function ReviewCard({ review }) {
+  return (
+    <div className="review-card">
+      <div>
+        <div className="rating">
+          <div>
+            <h3>Rating</h3>
+          </div>
+          <div className="rating-stars">
+            {Array.from({ length: review.stars }).map((_, i) => (
+              <FontAwesomeIcon key={i} icon={faStar} className="icon" />
+            ))}
+          </div>
         </div>
-    );
+        <div className="reviewer-profile">
+          <div>
+            <img src={myImage} alt={`${review.name} profile`} />
+          </div>
+          <div>
+            <h4 className="reviewer-name">{review.name}</h4>
+          </div>
+        </div>
+        <p className="review-text">{review.text}</p>
+      </div>
+    </div>
+  );
 }
 
-
-class Testimonials extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return(
-            <section className="testimonials">
-                <h1>Testimonials</h1>
-                <div>
-                    <ReviewCard userName="madam"/>
-                    <ReviewCard userName="sam"/>
-                    <ReviewCard userName="rob"/>
-                    <ReviewCard userName="max"/>
-                </div>
-            </section>
-        );
-    }
+function Testimonials() {
+  return (
+    <section className="testimonials">
+      <h1>Testimonials</h1>
+      <div>
+        {reviews.map((review) => (
+          <ReviewCard key={review.name} review={review} />
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default Testimonials;

@@ -1,28 +1,20 @@
-import React, {Component} from "react";
+import React from "react";
 import Logo from "./Logo";
-import { NavLink } from "react-router-dom";
-import restaurantFood from './assets/restaurantFood.jpg'
+import restaurantFood from './assets/restaurantFood.jpg';
 
-class Header extends Component {
-
-    constructor() {
-        super();
-    }
-
-    render() {
-        return(
-            <header className="header">
-                <div>
-                    <div>
-                        <Logo />
-                    </div>
-                    <div className="restaurantFoot-img">
-                        <img src={restaurantFood}></img>
-                    </div>
-                </div>
-            </header>
-        );
-    }
+function Header() {
+  return (
+    <header className="header">
+      <div>
+        <div>
+          <Logo />
+        </div>
+        <div className="restaurantFoot-img">
+          <img src={restaurantFood} alt="Grand Delight restaurant interior" />
+        </div>
+      </div>
+    </header>
+  );
 }
 
 export default Header;

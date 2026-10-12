@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './About.css'
 
 import { NavLink } from "react-router-dom";
@@ -50,7 +50,7 @@ function About() {
                             <NavLink className='primary-btn' to="/menu">View Menu</NavLink>
                         </div>
                         <div className='aboutPage-image'>
-                            <img src={feast} alt='feast food image'></img>
+                            <img src={feast} alt='Feast at Grand Delight' />
                         </div>
                     </div>
                     <p>
@@ -71,7 +71,7 @@ function About() {
                     <SectionHeader SectionHeader_text="The Wine Library"/>
                     <div className='aboutPage-flex'>
                         <div className='aboutPage-image'>
-                            <img src={wineLibrary} alt='wine library image'></img>
+                            <img src={wineLibrary} alt='The Wine Library at Grand Delight' />
                         </div>
                         <div className='aboutPage-para'>
                             <p>
@@ -107,7 +107,7 @@ function About() {
                             curated to showcase the design frameworks.
                         </p>
                         <div className='aboutPage-image'>
-                            <img src={openSpace} alt='Open space seating image'></img>
+                            <img src={openSpace} alt='Grand Delight open seating area' />
                         </div>
                     </div>
                     <p>
