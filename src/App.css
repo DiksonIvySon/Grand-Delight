@@ -1440,3 +1440,69 @@ img {
 .signUp .signUp-button button {
   min-width: 150px;
 }
+
+/* =========================================================
+   404 — NOT FOUND PAGE
+   ========================================================= */
+
+.notFound-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px var(--side-margin);
+  min-height: 60vh;
+}
+
+.notFound-icon {
+  font-size: 80px;
+  color: var(--gold);
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.notFound-code {
+  font-size: 120px;
+  font-family: 'Times New Roman', Times, serif;
+  color: var(--green);
+  margin: 0;
+  line-height: 1;
+}
+
+.notFound-title {
+  font-size: 28px;
+  font-family: 'Times New Roman', Times, serif;
+  color: var(--gold);
+  margin: 8px 0 16px;
+}
+
+.notFound-message {
+  font-size: 12pt;
+  color: #555;
+  line-height: 1.7;
+  max-width: 420px;
+  margin: 0 0 36px;
+}
+
+.notFound-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  .notFound-code {
+    font-size: 80px;
+  }
+
+  .notFound-title {
+    font-size: 22px;
+  }
+
+  .notFound-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
