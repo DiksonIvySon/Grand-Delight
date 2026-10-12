@@ -26,7 +26,7 @@ function ReviewCard({ review }) {
         </div>
         <div className="reviewer-profile">
           <div>
-            <img src={myImage} alt={`${review.name} profile`} />
+            <img src={myImage} alt={`${review.name} profile`} loading="lazy" />
           </div>
           <div>
             <h4 className="reviewer-name">{review.name}</h4>

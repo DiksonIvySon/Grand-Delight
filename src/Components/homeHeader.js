@@ -10,7 +10,7 @@ function Header() {
           <Logo />
         </div>
         <div className="restaurantFoot-img">
-          <img src={restaurantFood} alt="Grand Delight restaurant interior" />
+          <img src={restaurantFood} alt="Grand Delight restaurant interior" loading="lazy" />
         </div>
       </div>
     </header>

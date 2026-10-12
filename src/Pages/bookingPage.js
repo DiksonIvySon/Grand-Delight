@@ -78,7 +78,7 @@ function Reservation() {
             <p><strong>Additional Requirements:<br /></strong>{inputs.additionalRequirements}</p>
           </div>
           <div>
-            <img src={successfulPhoto} alt="Reservation confirmed" />
+            <img src={successfulPhoto} alt="Reservation confirmed" loading="lazy" />
           </div>
         </div>
         <button className="primary-btn" onClick={handleMadeReservation}>Make changes</button>

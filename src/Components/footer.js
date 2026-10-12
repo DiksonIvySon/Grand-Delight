@@ -11,7 +11,7 @@ function Footer() {
       </div>
       <div className="inFooter-container">
         <div className="footer-img">
-          <img src={restaurant} alt="Grand Delight restaurant" />
+          <img src={restaurant} alt="Grand Delight restaurant" loading="lazy" />
         </div>
         <div>
           <h4>Quick Links</h4>

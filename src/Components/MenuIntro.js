@@ -10,7 +10,7 @@ function MenuIntro() {
     <div className='menuIntro-container'>
       <div className='menuIntro'>
         <div className='menuIntro-images'>
-          <img className='lamskoteletten' src={lamskoteletten} alt='Lamb chops dish' />
+          <img className='lamskoteletten' src={lamskoteletten} alt='Lamb chops dish' loading="lazy" />
         </div>
         <div className='menuIntro-text'>
           <SectionHeader SectionHeader_text="Our Food" SectionHeader_color="darkMode" />

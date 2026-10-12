@@ -85,7 +85,7 @@ function MenuItem({ foods }) {
         <div className="foodItem-info">
           <div className='foodItem-img-des'>
             <div className="foodItem-image">
-              <img src={foods.image} alt={foods.title} />
+              <img src={foods.image} alt={foods.title} loading="lazy" />
             </div>
             <div className='foodItem-img-des-info'>
               <div>
@@ -117,7 +117,7 @@ function SignatureDish({ foods }) {
       <div>
         <div className="signatureDish-info">
           <div className="signatureDish-image">
-            <img src={foods.image} alt={foods.title} />
+            <img src={foods.image} alt={foods.title} loading="lazy" />
           </div>
           <div className='signatureDish-img-des-info'>
             <p className="signatureDish-description">{foods.description}</p>

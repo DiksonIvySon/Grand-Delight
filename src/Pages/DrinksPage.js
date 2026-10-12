@@ -14,22 +14,30 @@ import drinksMenu5 from '../images/drinksMenu5.jpg';
 
 function DrinksPage() {
   return (
-    <div>
+    <section className='body'>
+      <nav className='nav'>
         <Nav />
+      </nav>
+      <header className='header'>
         <Header />
-        <SectionHeader SectionHeader_text="Drinks Menu"/>
+      </header>
+      <main className='main'>
+        <SectionHeader SectionHeader_text="Drinks Menu" />
         <div className='drinksPage-container section-margin'>
-            <div className='drinksPage-content'>
-                <img className='drinksMenu-image' src={drinksMenu1} alt='Drinks Menu'></img>
-                <img className='drinksMenu-image' src={drinksMenu2} alt='Drinks Menu'></img>
-                <img className='drinksMenu-image' src={drinksMenu3} alt='Drinks Menu'></img>
-                <img className='drinksMenu-image' src={drinksMenu4} alt='Drinks Menu'></img>
-                <img className='drinksMenu-image' src={drinksMenu5} alt='Drinks Menu'></img>
-            </div>
+          <div className='drinksPage-content'>
+            <img className='drinksMenu-image' src={drinksMenu1} alt='Drinks menu page 1' loading="lazy" />
+            <img className='drinksMenu-image' src={drinksMenu2} alt='Drinks menu page 2' loading="lazy" />
+            <img className='drinksMenu-image' src={drinksMenu3} alt='Drinks menu page 3' loading="lazy" />
+            <img className='drinksMenu-image' src={drinksMenu4} alt='Drinks menu page 4' loading="lazy" />
+            <img className='drinksMenu-image' src={drinksMenu5} alt='Drinks menu page 5' loading="lazy" />
+          </div>
         </div>
-        <Footer></Footer>
-    </div>
-  )
+      </main>
+      <footer className='footer'>
+        <Footer />
+      </footer>
+    </section>
+  );
 }
 
-export default DrinksPage
+export default DrinksPage;

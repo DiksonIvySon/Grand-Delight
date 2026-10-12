@@ -28,11 +28,11 @@ function Story() {
           <NavLink className='primary-btn' to="/about">Read More</NavLink>
         </div>
         <div className='story-images'>
-          <img className='story-restaurant' src={restaurant} alt='Grand Delight restaurant' />
-          <img className='breakfast1' src={breakfast1} alt='Breakfast dish' />
+          <img className='story-restaurant' src={restaurant} alt='Grand Delight restaurant' loading="lazy" />
+          <img className='breakfast1' src={breakfast1} alt='Breakfast dish' loading="lazy" />
         </div>
       </div>
-      <img className='salad1' src={salad1} alt='Fresh salad' />
+      <img className='salad1' src={salad1} alt='Fresh salad' loading="lazy" />
     </div>
   );
 }

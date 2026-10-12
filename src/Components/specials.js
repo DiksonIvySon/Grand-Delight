@@ -28,7 +28,7 @@ function FoodCard({ foods }) {
   return (
     <div className="card">
       <div className="card-image">
-        <img src={foods.image} alt={foods.title} />
+        <img src={foods.image} alt={foods.title} loading="lazy" />
       </div>
       <div className="card-tittle">
         <div>

@@ -14,7 +14,7 @@ function OfferMenu({ offering_btn_visibility }) {
       <SectionHeader SectionHeader_text="What We Offer" />
       <div className='offerMenu'>
         <div className='offering'>
-          <img className='offering-image' src={starters1_image} alt='Starters selection' />
+          <img className='offering-image' src={starters1_image} alt='Starters selection' loading="lazy" />
           <h2>Starters</h2>
           <p>meaty</p>
           <p>vegetarian</p>
@@ -28,7 +28,7 @@ function OfferMenu({ offering_btn_visibility }) {
             convey the best on offer from around the world.
           </p>
           <NavLink className='primary-btn' id={offering_btn_visibility} to="/menu">View Menu</NavLink>
-          <img src={luxury_food} alt='Luxury main course' />
+          <img src={luxury_food} alt='Luxury main course' loading="lazy" />
           <h2>Mains</h2>
           <p>Breakfast</p>
           <p>Starter</p>
@@ -36,14 +36,14 @@ function OfferMenu({ offering_btn_visibility }) {
           <p>Deserts</p>
         </div>
         <div className='offering'>
-          <img src={luxury_drinks} alt='Luxury drinks selection' />
+          <img src={luxury_drinks} alt='Luxury drinks selection' loading="lazy" />
           <h2>Drinks</h2>
           <p>soft drinks</p>
           <p>wine &amp; beer</p>
           <p>spirits</p>
         </div>
         <div className='woodBackground-container'>
-          <img className='woodBackground' src={require('../images/wood-background.jpg')} alt='Wood texture background' />
+          <img className='woodBackground' src={require('../images/wood-background.jpg')} alt='Wood texture background' loading="lazy" />
         </div>
       </div>
     </div>

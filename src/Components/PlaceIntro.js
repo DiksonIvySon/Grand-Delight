@@ -24,9 +24,9 @@ function PlaceIntro() {
             <NavLink className='primary-btn' to="/bookingPage">Make A Reservation</NavLink>
           </div>
           <div className='placeIntro-images'>
-            <img className='restaurant2' src={restaurant2} alt='Restaurant dining area' />
-            <img className='restaurant3' src={restaurant3} alt='Restaurant lounge area' />
-            <img className='restaurant4' src={restaurant4} alt='Restaurant bar area' />
+            <img className='restaurant2' src={restaurant2} alt='Restaurant dining area' loading="lazy" />
+            <img className='restaurant3' src={restaurant3} alt='Restaurant lounge area' loading="lazy" />
+            <img className='restaurant4' src={restaurant4} alt='Restaurant bar area' loading="lazy" />
           </div>
         </div>
       </div>
