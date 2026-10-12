@@ -539,6 +539,73 @@ img {
 }
 
 /* =========================================================
+   MENU FILTER TABS
+   ========================================================= */
+
+.menu-tabs-wrapper {
+  padding: 32px 0 8px;
+}
+
+.menu-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--gray-border);
+  padding-bottom: 0;
+}
+
+.menu-tab {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;          /* sits on top of the wrapper border */
+  padding: 10px 20px;
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: color var(--transition), border-color var(--transition);
+  white-space: nowrap;
+}
+
+.menu-tab:hover {
+  color: var(--gold);
+}
+
+.menu-tab--active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+.menu-section {
+  animation: fadeSection 0.3s ease;
+}
+
+@keyframes fadeSection {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.drinks-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .menu-tabs {
+    gap: 4px;
+  }
+
+  .menu-tab {
+    padding: 8px 12px;
+    font-size: 10.5pt;
+  }
+}
+
+/* =========================================================
    SPECIALS — FOOD CARDS
    ========================================================= */
 
