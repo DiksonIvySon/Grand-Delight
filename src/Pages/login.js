@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from '../Components/nav';
-import Header from '../Components/homeHeader';
+import Header from '../Components/pageHeader';
 import Footer from '../Components/footer';
 import { LoginForm } from './bookingPage';
 

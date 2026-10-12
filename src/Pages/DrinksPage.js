@@ -2,7 +2,7 @@ import React from 'react';
 import './DrinksPage.css';
 
 import Nav from '../Components/nav';
-import Header from '../Components/homeHeader';
+import Header from '../Components/pageHeader';
 import Footer from '../Components/footer';
 import SectionHeader from '../Components/SectionHeader';
 

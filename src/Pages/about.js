@@ -4,7 +4,7 @@ import './About.css'
 import { NavLink } from "react-router-dom";
 
 import Nav from '../Components/nav';
-import Header from '../Components/homeHeader';
+import Header from '../Components/pageHeader';
 import Footer from '../Components/footer';
 import SectionHeader from '../Components/SectionHeader';
 
@@ -16,8 +16,12 @@ function About() {
 
     return(
         <section className='body'>
-            <Nav />
-            <Header />
+            <nav className='nav'>
+                <Nav />
+            </nav>
+            <header className='header'>
+                <Header />
+            </header>
             <main className='aboutPage section-margin'>
                 <div>
                     <div className="header-heading">
@@ -139,7 +143,9 @@ function About() {
                     </p>
                 </div>
             </main>
-            <Footer />
+            <footer className='footer'>
+                <Footer />
+            </footer>
         </section>
     );
 }
