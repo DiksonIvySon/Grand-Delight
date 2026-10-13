@@ -3,8 +3,10 @@ import Nav from '../Components/nav';
 import Header from '../Components/pageHeader';
 import Footer from '../Components/footer';
 import { LoginForm } from './bookingPage';
+import usePageTitle from '../hooks/usePageTitle';
 
 function Login() {
+  usePageTitle('Login');
   return (
     <section className='body'>
       <nav className='nav'>

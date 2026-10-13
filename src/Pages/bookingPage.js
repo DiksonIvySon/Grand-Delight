@@ -5,7 +5,9 @@ import Footer from "../Components/footer";
 import SignupPopup from "../Components/signupPopup";
 import { useState } from "react";
 import successfulPhoto from "../Components/assets/success.gif";
+import usePageTitle from "../hooks/usePageTitle";
 
+/* ── Helpers ─────────────────────────────────────────────── */
 
 function codeGenerator(characters) {
   const codeLength = 10;
@@ -17,133 +19,224 @@ function codeGenerator(characters) {
   return code;
 }
 
+/** Returns today's date as a YYYY-MM-DD string for the min attribute */
+function getTodayString() {
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm   = String(today.getMonth() + 1).padStart(2, '0');
+  const dd   = String(today.getDate()).padStart(2, '0');
+  return `${yyyy}-${mm}-${dd}`;
+}
+
+/** Format YYYY-MM-DD → "12 October 2026" for the confirmation screen */
+function formatDate(dateStr) {
+  if (!dateStr) return "";
+  const [yyyy, mm, dd] = dateStr.split('-');
+  const date = new Date(Number(yyyy), Number(mm) - 1, Number(dd));
+  return date.toLocaleDateString('en-ZA', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
+/* ── Reservation form ────────────────────────────────────── */
 
 function Reservation() {
   const [madeReservation, setMadeReservation] = useState("reservation-show");
   const [reservationStatus, setReservationStatus] = useState("unSuccessfulRes");
+  const [errors, setErrors] = useState({});
   const [inputs, setInputs] = useState({
     resDate: "",
-    resTime: "",
+    resTime: "Select",
     numberOfGuests: "",
     resCode: "",
-    occasion: "",
+    occasion: "Select",
     additionalRequirements: "No additional requirements",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputs((prev) => ({ ...prev, [name]: value }));
+    // Clear the error for this field as the user types
+    setErrors((prev) => ({ ...prev, [name]: "" }));
+  };
+
+  const validate = () => {
+    const newErrors = {};
+
+    if (!inputs.resDate) {
+      newErrors.resDate = "Please choose a date.";
+    }
+
+    if (inputs.resTime === "Select" || !inputs.resTime) {
+      newErrors.resTime = "Please choose a time.";
+    }
+
+    if (!inputs.numberOfGuests || Number(inputs.numberOfGuests) < 1) {
+      newErrors.numberOfGuests = "Please enter the number of guests (min 1).";
+    }
+
+    if (inputs.occasion === "Select" || !inputs.occasion) {
+      newErrors.occasion = "Please select an occasion.";
+    }
+
+    return newErrors;
   };
 
   const handleMadeReservation = () => {
-    setMadeReservation((prev) =>
-      prev === "reservation-hide" ? "reservation-show" : "reservation-hide"
-    );
+    setMadeReservation("reservation-show");
+    setReservationStatus("unSuccessfulRes");
+    setInputs({
+      resDate: "",
+      resTime: "Select",
+      numberOfGuests: "",
+      resCode: "",
+      occasion: "Select",
+      additionalRequirements: "No additional requirements",
+    });
+    setErrors({});
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (
-      inputs.resDate === "" ||
-      inputs.resTime === "" ||
-      inputs.numberOfGuests === "" ||
-      inputs.occasion === "" ||
-      inputs.occasion === "Select"
-    ) {
-      alert("Please enter all required input fields!");
-    } else {
-      setMadeReservation("reservation-hide");
-      setReservationStatus("successfulRes");
-      const characters = inputs.resDate + inputs.resTime + inputs.occasion;
-      const new_input = { ...inputs, resCode: codeGenerator(characters) };
-      setInputs(new_input);
+    const newErrors = validate();
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
     }
+
+    setMadeReservation("reservation-hide");
+    setReservationStatus("successfulRes");
+    const characters = inputs.resDate + inputs.resTime + inputs.occasion;
+    setInputs((prev) => ({ ...prev, resCode: codeGenerator(characters) }));
   };
 
   return (
     <section className="reservation">
+
+      {/* ── Success screen ── */}
       <div className={reservationStatus}>
-        <h1>Your Reservation was made successfully!</h1>
-        <p>Please keep your reservation code very safe — it will be required to claim your table.</p>
+        <div className="successfulRes-header">
+          <span className="successfulRes-checkmark">✓</span>
+          <h1>Reservation Confirmed!</h1>
+          <p>Please keep your reservation code safe — it will be required to claim your table.</p>
+        </div>
         <div className="successfulRes-details">
-          <div>
+          <div className="successfulRes-info">
             <h2>Reservation Details</h2>
             <ul>
-              <li><strong>Reservation Date: </strong><span>{inputs.resDate}</span></li>
-              <li><strong>Reservation Time: </strong><span>{inputs.resTime}</span></li>
-              <li><strong className="resCode">Reservation Code: </strong><span>{inputs.resCode}</span></li>
-              <li><strong>Number of expected guests: </strong><span>{inputs.numberOfGuests}</span></li>
-              <li><strong>Occasion: </strong><span>{inputs.occasion}</span></li>
+              <li><strong>Date:</strong><span>{formatDate(inputs.resDate)}</span></li>
+              <li><strong>Time:</strong><span>{inputs.resTime}</span></li>
+              <li>
+                <strong>Reservation Code:</strong>
+                <span className="resCode">{inputs.resCode}</span>
+              </li>
+              <li><strong>Guests:</strong><span>{inputs.numberOfGuests}</span></li>
+              <li><strong>Occasion:</strong><span>{inputs.occasion}</span></li>
             </ul>
-            <p><strong>Additional Requirements:<br /></strong>{inputs.additionalRequirements}</p>
+            {inputs.additionalRequirements !== "No additional requirements" && (
+              <p><strong>Additional Requirements:</strong><br />{inputs.additionalRequirements}</p>
+            )}
           </div>
-          <div>
+          <div className="successfulRes-img">
             <img src={successfulPhoto} alt="Reservation confirmed" loading="lazy" />
           </div>
         </div>
-        <button className="primary-btn" onClick={handleMadeReservation}>Make changes</button>
+        <button className="primary-btn" onClick={handleMadeReservation}>
+          Make another reservation
+        </button>
       </div>
+
+      {/* ── Form ── */}
       <div className={madeReservation}>
         <div className="reservation-title">
-          <h1>Make Reservation</h1>
+          <h1>Make a Reservation</h1>
         </div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} noValidate>
           <div className="inputs">
+
+            {/* Date — min set to today, no past dates */}
             <div>
-              <label htmlFor="resDate">Choose date*
+              <label htmlFor="resDate">Choose date *
                 <br />
                 <input
                   type="date"
                   id="resDate"
                   name="resDate"
+                  value={inputs.resDate}
+                  min={getTodayString()}
                   onChange={handleChange}
+                  className={errors.resDate ? 'input-error' : ''}
                 />
               </label>
+              {errors.resDate && <p className="field-error">{errors.resDate}</p>}
             </div>
+
+            {/* Number of guests */}
             <div>
-              <label htmlFor="numberOfGuests">Number of guests*
+              <label htmlFor="numberOfGuests">Number of guests *
                 <br />
                 <input
                   type="number"
                   id="numberOfGuests"
                   name="numberOfGuests"
+                  value={inputs.numberOfGuests}
                   placeholder="1"
                   min="1"
                   max="15"
                   onChange={handleChange}
+                  className={errors.numberOfGuests ? 'input-error' : ''}
                 />
               </label>
+              {errors.numberOfGuests && <p className="field-error">{errors.numberOfGuests}</p>}
             </div>
+
+            {/* Additional requirements */}
             <div>
               <label htmlFor="additionalRequirements">Any additional requirements (Optional)
                 <br />
                 <textarea
                   id="additionalRequirements"
                   name="additionalRequirements"
-                  placeholder="Please let us know of any additional requirements or requests here."
+                  placeholder="Please let us know of any dietary requirements, allergies or special requests."
                   onChange={handleChange}
                 />
               </label>
             </div>
+
+            {/* Occasion + Time selects */}
             <div className="selections">
               <div>
-                <label htmlFor="occasion">Occasion*</label>
+                <label htmlFor="occasion">Occasion *</label>
                 <br />
-                <select id="occasion" name="occasion" onChange={handleChange}>
-                  <option>Select</option>
+                <select
+                  id="occasion"
+                  name="occasion"
+                  value={inputs.occasion}
+                  onChange={handleChange}
+                  className={errors.occasion ? 'input-error' : ''}
+                >
+                  <option value="Select" disabled>Select occasion</option>
                   <option>Birthday</option>
                   <option>Anniversary</option>
                   <option>Family gathering</option>
                   <option>Reunion</option>
                   <option>Celebration</option>
+                  <option>Business dinner</option>
+                  <option>Date night</option>
                   <option>Other</option>
                 </select>
+                {errors.occasion && <p className="field-error">{errors.occasion}</p>}
               </div>
               <div>
-                <label htmlFor="resTime">Choose time*
+                <label htmlFor="resTime">Choose time *
                   <br />
-                  <select id="resTime" name="resTime" onChange={handleChange}>
-                    <option>Select</option>
+                  <select
+                    id="resTime"
+                    name="resTime"
+                    value={inputs.resTime}
+                    onChange={handleChange}
+                    className={errors.resTime ? 'input-error' : ''}
+                  >
+                    <option value="Select" disabled>Select time</option>
                     <option>16:00</option>
                     <option>17:00</option>
                     <option>18:00</option>
@@ -153,8 +246,10 @@ function Reservation() {
                     <option>22:00</option>
                   </select>
                 </label>
+                {errors.resTime && <p className="field-error">{errors.resTime}</p>}
               </div>
             </div>
+
           </div>
           <div className="confirmButton">
             <button className="primary-btn" type="submit">Confirm Reservation</button>
@@ -165,12 +260,11 @@ function Reservation() {
   );
 }
 
+/* ── Login form ──────────────────────────────────────────── */
+
 export function LoginForm() {
   const [renderSignUp, setRenderSignUp] = useState(false);
-  const [inputs, setInputs] = useState({
-    email: "",
-    password: "",
-  });
+  const [inputs, setInputs] = useState({ email: "", password: "" });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -180,10 +274,6 @@ export function LoginForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(inputs);
-  };
-
-  const toggleRenderSignUp = () => {
-    setRenderSignUp((prev) => !prev);
   };
 
   return (
@@ -219,20 +309,26 @@ export function LoginForm() {
             <h4>Forgot your password?</h4>
             <h4>Don't have an account?</h4>
           </div>
-          <button className="create-account-button primary-btn" type="button" onClick={toggleRenderSignUp}>
+          <button
+            className="create-account-button primary-btn"
+            type="button"
+            onClick={() => setRenderSignUp((prev) => !prev)}
+          >
             Create new Account
           </button>
         </form>
       </div>
       {renderSignUp && (
-        <SignupPopup toggleRenderSignUp={toggleRenderSignUp} />
+        <SignupPopup toggleRenderSignUp={() => setRenderSignUp(false)} />
       )}
     </section>
   );
 }
 
+/* ── Booking page ────────────────────────────────────────── */
 
 function BookingPage() {
+  usePageTitle('Reservation');
   return (
     <section>
       <nav className='nav'>

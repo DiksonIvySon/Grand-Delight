@@ -26,9 +26,21 @@ function Footer() {
         <div>
           <h4>Contact</h4>
           <ul>
-            <li><span>The Leonardo, Sandton, JHB</span></li>
-            <li><span>+27 (764) 765 7654</span></li>
-            <li><span>info@granddelight.co.za</span></li>
+            <li>
+              <a
+                href="https://maps.google.com/?q=The+Leonardo+Sandton+Johannesburg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                The Leonardo, Sandton, JHB
+              </a>
+            </li>
+            <li>
+              <a href="tel:+27764765765">+27 (764) 765 7654</a>
+            </li>
+            <li>
+              <a href="mailto:info@granddelight.co.za">info@granddelight.co.za</a>
+            </li>
           </ul>
         </div>
         <div>

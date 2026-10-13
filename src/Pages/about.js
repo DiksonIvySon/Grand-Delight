@@ -7,12 +7,14 @@ import Nav from '../Components/nav';
 import Header from '../Components/pageHeader';
 import Footer from '../Components/footer';
 import SectionHeader from '../Components/SectionHeader';
+import usePageTitle from '../hooks/usePageTitle';
 
 import feast from '../images/feast.jpg';
 import openSpace from '../images/openSpace.jpg';
 import wineLibrary from '../images/wineLibrary.jpg';
 
 function About() {
+  usePageTitle('About');
 
     return(
         <section className='body'>

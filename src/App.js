@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PageTransition from './Components/PageTransition';
+import ScrollToTop from './Components/ScrollToTop';
 // pages
 import BookingPage from './Pages/bookingPage';
 import Home from './Pages/home';
@@ -25,6 +26,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </PageTransition>
+      <ScrollToTop />
     </BrowserRouter>
   );
 }

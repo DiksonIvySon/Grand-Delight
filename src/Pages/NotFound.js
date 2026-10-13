@@ -3,8 +3,10 @@ import { NavLink } from 'react-router-dom';
 import Nav from '../Components/nav';
 import Footer from '../Components/footer';
 import { GiCook } from 'react-icons/gi';
+import usePageTitle from '../hooks/usePageTitle';
 
 function NotFound() {
+  usePageTitle('Page Not Found');
   return (
     <section className='body'>
       <nav className='nav'>

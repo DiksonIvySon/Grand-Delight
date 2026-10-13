@@ -6,6 +6,7 @@ import Specials from '../Components/specials';
 import SectionHeader from '../Components/SectionHeader';
 import OfferMenu from '../Components/OfferMenu';
 import { NavLink } from "react-router-dom";
+import usePageTitle from '../hooks/usePageTitle';
 
 /* food images */
 import greekSalad from '../Components/assets/greekSalad.jpg';
@@ -244,6 +245,7 @@ function DrinksSection() {
 
 function Menu() {
   const [activeTab, setActiveTab] = useState('all');
+  usePageTitle('Menu');
 
   const show = (id) => activeTab === 'all' || activeTab === id;
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import './DrinksPage.css';
-
 import Nav from '../Components/nav';
 import Header from '../Components/pageHeader';
 import Footer from '../Components/footer';
 import SectionHeader from '../Components/SectionHeader';
+import usePageTitle from '../hooks/usePageTitle';
 
 import drinksMenu1 from '../images/drinksMenu1.jpg';
 import drinksMenu2 from '../images/drinksMenu2.jpg';
@@ -13,6 +13,7 @@ import drinksMenu4 from '../images/drinksMenu4.jpg';
 import drinksMenu5 from '../images/drinksMenu5.jpg';
 
 function DrinksPage() {
+  usePageTitle('Drinks Menu');
   return (
     <section className='body'>
       <nav className='nav'>
